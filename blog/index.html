@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRVTSL17XT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LRVTSL17XT');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concrete Care Blog | CGB Industries</title>
+  <meta name="description" content="Straight advice on looking after Sunshine Coast concrete — how often to pressure wash a driveway, what sealing actually does, and when a surface needs help." />
+  <link rel="canonical" href="https://cgbindustries.com.au/blog" />
+
+  <meta property="og:title" content="Concrete Care Blog | CGB Industries" />
+  <meta property="og:description" content="Straight advice on looking after Sunshine Coast concrete — how often to pressure wash a driveway, what sealing actually does, and when a surface needs help." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cgbindustries.com.au/blog" />
+  <meta property="og:image" content="https://cgbindustries.com.au/img2/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Pressure washed concrete driveway on the Sunshine Coast">
+  <link rel="icon" type="image/png" href="https://github.com/maddenmax0-creator/CGB/blob/main/favicon.png?raw=true" />
+  <link rel="apple-touch-icon" href="https://github.com/maddenmax0-creator/CGB/blob/main/favicon.png?raw=true" />
+
+  <!--
+    BLOG JSON-LD
+    When you publish a post, add it to "blogPost" below as another
+    { "@type": "BlogPosting", ... } entry. Newest first.
+  -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": "https://cgbindustries.com.au/blog#blog",
+    "name": "Concrete Care Blog",
+    "description": "Straight advice on looking after Sunshine Coast concrete — pressure washing, sealing, and knowing when a surface needs attention.",
+    "url": "https://cgbindustries.com.au/blog",
+    "inLanguage": "en-AU",
+    "publisher": { "@id": "https://cgbindustries.com.au/#business" },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "POST TITLE",
+        "url": "https://cgbindustries.com.au/blog/POST-SLUG",
+        "datePublished": "2026-01-01",
+        "author": { "@type": "Person", "name": "Chris" }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cgbindustries.com.au/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://cgbindustries.com.au/blog" }
+    ]
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    .skip-link {
+      position: absolute; top: -100px; left: 0;
+      background: #fff; color: #000;
+      padding: 12px 20px; font-weight: 600; font-size: 0.85rem;
+      z-index: 9999; text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:    #080808;
+      --surface:  #0f0f0f;
+      --card:     #161616;
+      --border:   #242424;
+      --mid:      #383838;
+      --muted:    #5a5a5a;
+      --ash:      #8a8a8a;
+      --concrete: #C8C3BC;
+      --light:    #E8E8E8;
+      --white:    #FFFFFF;
+      --z-base:   1;
+      --z-overlay: 10;
+      --z-nav:    100;
+      --z-skip:   9999;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--black);
+      color: var(--light);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: var(--z-skip);
+      opacity: 0.032;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 180px 180px;
+    }
+
+    .container { max-width: 1360px; margin: 0 auto; width: 100%; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: var(--z-nav); height: 60px;
+      background: rgba(8,8,8,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1360px; margin: 0 auto; padding: 0 48px;
+      height: 100%; display: flex; justify-content: space-between; align-items: center;
+    }
+    .nav-logo img { height: 34px; display: block; }
+    .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+    .nav-links a {
+      text-decoration: none; font-size: 0.7rem; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--muted); transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a[aria-current="page"] { color: var(--concrete); }
+    .nav-cta {
+      background: var(--white) !important; color: var(--black) !important;
+      padding: 9px 22px !important; letter-spacing: 0.14em !important;
+      font-weight: 600 !important; transition: background 0.2s, transform 0.15s !important;
+    }
+    .nav-cta:hover { background: var(--concrete) !important; transform: translateY(-1px) !important; }
+    .nav-cta:active { transform: scale(0.98) translateY(0) !important; }
+
+    .nav-burger { display: none; background: none; border: none; cursor: pointer; padding: 10px; margin-right: -10px; }
+    .nav-burger span { display: block; width: 22px; height: 2px; background: var(--white); transition: transform 0.25s ease, opacity 0.2s ease; }
+    .nav-burger span + span { margin-top: 5px; }
+    .nav-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none; position: fixed; top: 56px; left: 0; right: 0;
+      background: rgba(8,8,8,0.98); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border); z-index: 99; padding: 12px 0 20px;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a {
+      display: block; padding: 14px 24px; text-decoration: none;
+      font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 1rem;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--ash);
+      border-bottom: 1px solid var(--border); transition: color 0.2s, padding-left 0.2s;
+    }
+    .mobile-menu a:hover, .mobile-menu a:active { color: var(--white); padding-left: 30px; }
+    .mobile-menu a.mobile-cta { color: var(--black); background: var(--white); margin: 16px 24px 0; text-align: center; border: none; }
+
+    /* ── SHARED TYPE ── */
+    .label {
+      font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 0.65rem;
+      letter-spacing: 0.32em; text-transform: uppercase; color: var(--muted);
+      display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+    }
+    .label::before { content: ''; display: block; width: 16px; height: 1px; background: var(--muted); }
+
+    .h2 {
+      font-family: 'Oswald', sans-serif; font-weight: 400;
+      font-size: clamp(2.8rem, 5vw, 4.5rem); line-height: 0.92;
+      letter-spacing: 0.02em; text-transform: uppercase; color: var(--white);
+      text-wrap: balance;
+    }
+    .h3 {
+      font-family: 'Oswald', sans-serif; font-weight: 400;
+      font-size: clamp(1.6rem, 2.6vw, 2.1rem); line-height: 1;
+      letter-spacing: 0.02em; text-transform: uppercase; color: var(--white);
+    }
+
+    .body-text { font-size: 0.95rem; font-weight: 300; color: var(--ash); line-height: 1.78; text-wrap: pretty; }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      display: flex; gap: 8px; align-items: center;
+      font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 28px;
+    }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--concrete); }
+    .breadcrumb span { color: var(--border); }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding: 156px 52px 80px;
+      background: var(--black);
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero-inner { max-width: 1360px; margin: 0 auto; }
+    .page-hero .h2 { max-width: 780px; }
+    .page-hero-body { margin-top: 20px; max-width: 560px; }
+
+    /* ── CONTENT SECTIONS ── */
+    .content-section { padding: 96px 52px; background: var(--black); }
+    .content-section.alt { background: var(--surface); }
+    .content-inner { max-width: 1360px; margin: 0 auto; }
+    .content-header { max-width: 640px; margin-bottom: 48px; }
+
+    /* ── POST META (date · read time) ── */
+    .post-meta {
+      font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 0.62rem;
+      letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted);
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+    .meta-sep { color: var(--border); }
+
+    /* ── FEATURED POST ── */
+    .featured-post {
+      display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px;
+      align-items: center; text-decoration: none;
+    }
+    .featured-media { background: var(--card); overflow: hidden; }
+    .featured-media img {
+      width: 100%; height: auto; aspect-ratio: 16/10; object-fit: cover; display: block;
+      transition: opacity 0.3s ease, transform 0.4s ease;
+    }
+    .featured-post:hover .featured-media img { opacity: 0.85; transform: scale(1.02); }
+    .featured-title {
+      font-family: 'Oswald', sans-serif; font-weight: 400;
+      font-size: clamp(1.9rem, 3.2vw, 2.7rem); line-height: 1.02;
+      letter-spacing: 0.02em; text-transform: uppercase; color: var(--white);
+      margin: 16px 0 18px; text-wrap: balance; transition: color 0.2s;
+    }
+    .featured-post:hover .featured-title { color: var(--concrete); }
+    .featured-excerpt { font-size: 0.92rem; font-weight: 300; color: var(--ash); line-height: 1.78; text-wrap: pretty; }
+    .featured-more {
+      display: inline-flex; align-items: center; gap: 9px; margin-top: 26px;
+      font-family: 'Oswald', sans-serif; font-size: 0.78rem; font-weight: 400;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--concrete);
+      border-bottom: 1px solid var(--border); padding-bottom: 6px; transition: color 0.2s, border-color 0.2s;
+    }
+    .featured-post:hover .featured-more { color: var(--white); border-color: var(--ash); }
+
+    /* ── POST GRID (hairline rules, same idiom as .process-grid) ── */
+    .post-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border); margin-top: 8px;
+    }
+    .post-card {
+      background: var(--card); display: flex; flex-direction: column;
+      text-decoration: none; transition: background 0.25s;
+    }
+    .post-card:hover { background: #1b1b1b; }
+    .post-card-media { background: var(--surface); overflow: hidden; }
+    .post-card-media img {
+      width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; display: block;
+      transition: opacity 0.3s ease, transform 0.4s ease;
+    }
+    .post-card:hover .post-card-media img { opacity: 0.85; transform: scale(1.03); }
+    .post-card-body { padding: 28px 28px 32px; display: flex; flex-direction: column; flex: 1; }
+    .post-card-title {
+      font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 1.15rem;
+      line-height: 1.12; letter-spacing: 0.03em; text-transform: uppercase;
+      color: var(--white); margin: 0 0 12px; text-wrap: balance; transition: color 0.2s;
+    }
+    .post-card:hover .post-card-title { color: var(--concrete); }
+    .post-excerpt {
+      font-size: 0.84rem; font-weight: 300; color: var(--ash); line-height: 1.7;
+      display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2;
+      -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .post-card .post-meta { margin-top: auto; padding-top: 22px; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--black); border-top: 1px solid var(--border); padding: 36px 52px; }
+    .footer-inner {
+      max-width: 1360px; margin: 0 auto; display: flex;
+      justify-content: space-between; align-items: center; gap: 24px;
+    }
+    .footer-left img { height: 30px; display: block; }
+    .footer-tag {
+      font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 0.62rem;
+      letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); margin-top: 6px;
+    }
+    .footer-nav { display: flex; gap: 28px; list-style: none; }
+    .footer-nav a {
+      text-decoration: none; font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); transition: color 0.2s;
+    }
+    .footer-nav a:hover { color: var(--white); }
+    .footer-right { text-align: right; font-size: 0.72rem; color: var(--muted); line-height: 1.9; }
+    .footer-legal { display: flex; gap: 16px; margin-top: 4px; justify-content: flex-end; }
+    .footer-legal a { font-size: 0.68rem; color: var(--border); text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s; }
+    .footer-legal a:hover { color: var(--muted); }
+
+    .footer-areas-title {
+      font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 0.62rem;
+      letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+    }
+    .footer-areas-list { display: flex; gap: 16px; list-style: none; flex-wrap: wrap; }
+    .footer-areas-list a {
+      text-decoration: none; font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); transition: color 0.2s;
+    }
+    .footer-areas-list a:hover { color: var(--white); }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--concrete); outline-offset: 3px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) {
+      .post-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* Single column below 840px */
+    @media (max-width: 840px) {
+      .featured-post { grid-template-columns: 1fr; gap: 28px; }
+      .post-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      nav { height: 56px; }
+      .nav-inner { padding: 0 20px; }
+      .nav-links { display: none; }
+      .nav-burger { display: block; }
+
+      .page-hero { padding: 120px 24px 56px; }
+      .content-section { padding: 64px 24px; }
+      .post-card-body { padding: 24px 24px 28px; }
+
+      footer { padding: 36px 24px; }
+      .footer-inner { flex-direction: column; align-items: center; text-align: center; gap: 24px; }
+      .footer-left { display: flex; flex-direction: column; align-items: center; }
+      .footer-left img { margin: 0 auto; }
+      .footer-right { text-align: center; }
+      .footer-legal { justify-content: center; }
+      .footer-nav { flex-wrap: wrap; justify-content: center; gap: 14px; }
+      .footer-areas { display: flex; flex-direction: column; align-items: center; }
+      .footer-areas-list { justify-content: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <a href="/"><img src="/logo1.png" alt="CGB Industries" /></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#gallery">Gallery</a></li>
+      <li><a href="/#why">About</a></li>
+      <li><a href="/#testimonials">Reviews</a></li>
+      <li><a href="/blog" aria-current="page">Blog</a></li>
+      <li><a href="/#contact" class="nav-cta">Get a Quote</a></li>
+    </ul>
+    <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/#services">Services</a>
+  <a href="/#gallery">Gallery</a>
+  <a href="/#why">About</a>
+  <a href="/#testimonials">Reviews</a>
+  <a href="/blog">Blog</a>
+  <a href="/#contact" class="mobile-cta">Get a Quote</a>
+</div>
+
+<main id="main">
+
+<!-- MASTHEAD -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="/">Home</a><span>/</span>Blog</div>
+    <div class="label reveal">Journal</div>
+    <h1 class="h2 reveal">Concrete Care Blog</h1>
+    <p class="body-text page-hero-body reveal reveal-d1">Notes from the job — how Sunshine Coast concrete actually behaves, what cleaning and sealing do to it, and how to tell when a surface needs attention rather than another hose down.</p>
+  </div>
+</section>
+
+<!--
+  ════════════════════════════════════════════════════════════════════
+  MAINTAINING THIS PAGE
+
+  There is no build step. Adding a post means editing this file by hand:
+
+    1. Copy the FEATURED POST block or a POST CARD block below.
+    2. Replace the href, image, alt, title, excerpt, date and read time.
+    3. Add the post to the "blogPost" array in the Blog JSON-LD in <head>.
+    4. Add the post URL to /sitemap.xml.
+
+  Newest post goes in the FEATURED slot; demote the previous featured
+  post into the top-left position of the grid.
+
+  ⚠ THE ENTRIES BELOW ARE PLACEHOLDERS. They point at /blog/post-slug-*
+  URLs that do not exist yet. Replace or delete them before deploying.
+  ════════════════════════════════════════════════════════════════════
+-->
+
+<!-- FEATURED POST -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="content-header reveal">
+      <div class="label">Latest</div>
+    </div>
+
+    <!-- ── FEATURED POST BLOCK — copy this for a new lead post ── -->
+    <a class="featured-post reveal" href="/blog/post-slug-one">
+      <div class="featured-media">
+        <img src="/img2/driveway-pressure-washing-after.webp" width="1200" height="750" loading="eager" alt="PLACEHOLDER: describe the featured post image" />
+      </div>
+      <div>
+        <div class="post-meta">
+          <time datetime="2026-01-01">1 January 2026</time>
+          <span class="meta-sep" aria-hidden="true">/</span>
+          <span>6 min read</span>
+        </div>
+        <h2 class="featured-title">Placeholder Featured Post Title Goes Here</h2>
+        <p class="featured-excerpt">Placeholder excerpt. Two or three sentences that set up the question the post answers, written the way you would explain it standing on someone's driveway. This one runs a little longer than the grid excerpts because there is room for it.</p>
+        <span class="featured-more">
+          Read the post
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </div>
+    </a>
+    <!-- ── END FEATURED POST BLOCK ── -->
+
+  </div>
+</section>
+
+<!-- POST GRID -->
+<section class="content-section alt">
+  <div class="content-inner">
+    <div class="content-header reveal">
+      <div class="label">All Posts</div>
+      <h2 class="h3">More from the Blog</h2>
+    </div>
+
+    <div class="post-grid">
+
+      <!-- ── POST CARD BLOCK — copy this for each additional post ── -->
+      <a class="post-card reveal" href="/blog/post-slug-two">
+        <div class="post-card-media">
+          <img src="/img2/concrete-sealing-after.webp" width="1200" height="800" loading="lazy" alt="PLACEHOLDER: describe the post image" />
+        </div>
+        <div class="post-card-body">
+          <h3 class="post-card-title">Placeholder Post Title Two</h3>
+          <p class="post-excerpt">Placeholder excerpt, clamped to two lines no matter how much you write here, so every card in the row lines up.</p>
+          <div class="post-meta">
+            <time datetime="2026-01-01">1 January 2026</time>
+            <span class="meta-sep" aria-hidden="true">/</span>
+            <span>4 min read</span>
+          </div>
+        </div>
+      </a>
+      <!-- ── END POST CARD BLOCK ── -->
+
+      <a class="post-card reveal reveal-d1" href="/blog/post-slug-three">
+        <div class="post-card-media">
+          <img src="/img2/stair-restoration-after.webp" width="1200" height="800" loading="lazy" alt="PLACEHOLDER: describe the post image" />
+        </div>
+        <div class="post-card-body">
+          <h3 class="post-card-title">Placeholder Post Title Three</h3>
+          <p class="post-excerpt">Placeholder excerpt, clamped to two lines no matter how much you write here, so every card in the row lines up.</p>
+          <div class="post-meta">
+            <time datetime="2026-01-01">1 January 2026</time>
+            <span class="meta-sep" aria-hidden="true">/</span>
+            <span>5 min read</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="post-card reveal reveal-d2" href="/blog/post-slug-four">
+        <div class="post-card-media">
+          <img src="/img2/path-restoration-after.webp" width="1200" height="800" loading="lazy" alt="PLACEHOLDER: describe the post image" />
+        </div>
+        <div class="post-card-body">
+          <h3 class="post-card-title">Placeholder Post Title Four</h3>
+          <p class="post-excerpt">Placeholder excerpt, clamped to two lines no matter how much you write here, so every card in the row lines up.</p>
+          <div class="post-meta">
+            <time datetime="2026-01-01">1 January 2026</time>
+            <span class="meta-sep" aria-hidden="true">/</span>
+            <span>3 min read</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <img src="/logo1.png" alt="CGB Industries" />
+      <div class="footer-tag">Concrete · Restoration · Protection</div>
+    </div>
+    <ul class="footer-nav">
+      <li><a href="/pressure-washing">Pressure Washing</a></li>
+      <li><a href="/concrete-sealing">Concrete Sealing</a></li>
+      <li><a href="/#gallery">Gallery</a></li>
+      <li><a href="/#why">About</a></li>
+      <li><a href="/blog" aria-current="page">Blog</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <div class="footer-areas">
+      <div class="footer-areas-title">Service Areas</div>
+      <ul class="footer-areas-list">
+        <li><a href="/pressure-washing-buderim">Buderim</a></li>
+        <li><a href="/pressure-washing-forest-glen">Forest Glen</a></li>
+      </ul>
+    </div>
+    <div class="footer-right">
+      <div>0414 438 169</div>
+      <div>cgbindustries@outlook.com.au</div>
+      <div>ABN 12 508 435 400</div>
+      <div style="margin-top:4px;">© 2026 CGB Industries</div>
+      <div class="footer-legal">
+        <a href="/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── SCROLL REVEAL ──
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  // ── MOBILE MENU ──
+  const burger = document.getElementById('nav-burger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  burger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+</body>
+</html>

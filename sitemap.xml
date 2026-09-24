@@ -30,4 +30,17 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://cgbindustries.com.au/blog</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!--
+    BLOG POSTS
+    Every new post at /blog/<slug> needs its own <url> entry added below,
+    priority 0.7, with <lastmod> set to the post's publish date. There is
+    no build step generating these — add them by hand when you publish.
+  -->
 </urlset>
