@@ -1,6 +1,6 @@
 # SEO Audit: cgbindustries.com.au
 
-Audit date: 22 October 2026. Branch: `seo-optimisation`. Audited before any changes were made.
+Audit date: 22 October 2026. Branch: `seo-optimisation`. Sections 1 to 14 below describe the site as audited, before any changes were made. The implementation log, skipped items and off-site tasks are at the end (from "Implementation log").
 
 The site is six static HTML pages (home, two service pages, two suburb pages, privacy) with inline CSS and a small amount of inline JS. Hosting is Cloudflare (Worker with static assets). There is no wrangler config in the repo, and none was touched.
 
@@ -125,3 +125,87 @@ Every canonical, sitemap entry, OG URL, JSON-LD URL and `llms.txt` link uses `ht
 - The `llms.txt` text mentions "pricing factors" and "customer reviews". The pricing line should go (no-prices rule), and the file needs updating for any new pages.
 - `$0` appears as a stat on the homepage ("Quote Cost"). It means a free quote, not a published price, so it was left alone.
 - The homepage review quotes ("Price was fair") are customer words and were left as they are.
+
+---
+
+# Implementation log (23 October 2026)
+
+All work is on `seo-optimisation`, one logical change per commit. Nothing was pushed or merged. No wrangler config or Worker settings were touched.
+
+## What changed
+
+**Homepage**
+- Added an `<h1>`: "Pressure Washing & Concrete Sealing on the Sunshine Coast". It's visible, styled as a small sub-line under the "Concrete · Restoration · Protection" tagline. The "Clean." stamp stays decorative and `aria-hidden`.
+- Hero images are now lighter files (`-opt` desktop, `-828w` mobile) with a width-split preload. `fetchpriority` and the dimensions moved to the `<img>` (they did nothing on `<source>`).
+- Logo wraps in a link to `/`, with explicit dimensions and `width: auto` so it can't stretch.
+- Reduced-motion users no longer get an invisible hero. The existing rule set `animation: none` while the elements started at `opacity: 0`.
+- Removed the `review` and `aggregateRating` markup. `priceRange: "$$"` stays, as decided.
+- Added a `WebSite` entity, `knowsAbout`, a service catalogue that links all six service pages, and `areaServed` as `City` entries inside the Sunshine Coast area.
+- Added a link row to the new service pages and key suburbs under the service cards.
+
+**New pages** (each has a unique title and description, one H1, Service + BreadcrumbList + FAQPage schema, canonical, OG and Twitter tags, and real job photos)
+- `/driveway-cleaning`
+- `/exposed-aggregate-sealing`
+- `/pool-surround-and-path-cleaning`
+- `/commercial-pressure-washing` (no photos, because there are none of commercial jobs; see below)
+- `/service-areas` (hub for the suburbs, plus how quoting works)
+
+**Existing pages**
+- Footer on every page now has Services and Service Areas lists, so every page links every service and area page.
+- In-copy links from `/pressure-washing`, `/concrete-sealing`, `/pressure-washing-buderim` and `/pressure-washing-forest-glen` to the new pages.
+- The "pages for the rest are still to come" line on both suburb pages now points to `/service-areas`.
+- Each before/after slider now has its own `aria-label`. `decoding="async"` was added to lazy images. The footer Privacy link opens in the same tab and is readable (`--ash` instead of `--border`). The `/concrete-sealing` OG image alt no longer describes a driveway wash.
+
+**Housekeeping**
+- `vercel.json` deleted (untracked leftover, only contained `cleanUrls`).
+- `.gitignore` added with `.DS_Store`, and the two tracked `.DS_Store` files were removed from git.
+- `sitemap.xml` now lists all 10 indexable URLs with today's `lastmod`. `changefreq` and `priority` were dropped because Google ignores them.
+- `llms.txt` updated for the new pages. The "pricing factors" and "customer reviews" wording was removed.
+- Images: eight new WebPs from the earlier session are wired in, plus five more copied from `CGB ASSETS` into `img2/` (resized to 1200px and below, WebP, descriptive names). `CGB ASSETS` was only read.
+
+## `_headers` rules added (every rule)
+
+```
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/img2/*
+  Cache-Control: public, max-age=2592000     (30 days, not immutable: file names aren't hashed)
+
+/favicon.png
+  Cache-Control: public, max-age=604800      (7 days)
+
+/logo1.png
+  Cache-Control: public, max-age=604800      (7 days)
+```
+
+No `_redirects` file was added. Cloudflare static assets already serve `/pressure-washing` from `pressure-washing.html` and redirect `/x.html` to `/x`, and www is handled by your Redirect Rule.
+
+## Skipped, and why
+
+- **Suburb pages for Maroochydore, Mooloolaba, Caloundra, Nambour, Sippy Downs, Mountain Creek and Mons.** I don't have genuinely unique local content for them, and near-duplicate pages are doorway-page risk. They're listed on `/service-areas` instead. Add a page when there's something real to say (a job you've done there, local conditions you've seen).
+- **Anti-slip coatings and concrete restoration pages.** Covered inside the sealing, aggregate and paving pages. A standalone page needs its own photos and detail.
+- **Colour contrast of `--muted` text.** Fixing it changes the palette, so it's flagged only (except the privacy link, fixed).
+- **`$0` "Quote Cost" stat and the customer quotes on the homepage.** Left alone. The first means a free quote, and the quotes are customers' own words.
+- **"20+ Years in Concreting" on the homepage and in `llms.txt`.** Already on the site before this work and not touched. Please confirm it's accurate.
+- **Commercial page photos.** `CGB ASSETS` has no commercial or pool-surround photos, so those two pages use residential paving photos (captioned honestly) or none.
+- **`.assetsignore`.** `unedited/`, `doc/`, `SEO-AUDIT.md` and `llms.txt`-adjacent files are in the web root and will be served if deployed. Blocking them needs an `.assetsignore` or moving them out of the repo, and I didn't want to touch deployment config. Worth doing.
+
+## Things to check
+
+- The in-progress driveway photo (`driveway-pressure-washing-in-progress-sunshine-coast.webp`) shows a visible house number. Crop or blur it if you'd rather not publish that.
+- I couldn't test the Basin form submission or the layout on a real phone. The form code is unchanged, and I checked desktop layouts in headless Chrome only.
+- The Dulux Avista name appears once, on `/exposed-aggregate-sealing`, with no claim of accreditation or partnership.
+- Commercial page: I made no claims about insurance, SWMS or out-of-hours work. Add them if they're true (see below).
+
+## Off-site tasks for you
+
+1. **Google Business Profile.** Claim or verify it, set it as a service-area business (hide the address), add the suburbs, services and categories (e.g. pressure washing service, concrete contractor), upload real job photos, and make the name, phone and website match the site exactly.
+2. **Reviews.** Ask recent customers for Google reviews and reply to each. Real reviews on the profile do more than any on-site markup.
+3. **Citations.** Add consistent name, phone, website and service area to Hello Pages, True Local, Yellow Pages, Bing Places, Apple Business Connect, Facebook and Instagram bios. Link the Facebook and Instagram profiles back to the site.
+4. **Search Console.** Add `https://cgbindustries.com.au` as a domain property, submit `/sitemap.xml`, request indexing for the five new pages, and check Coverage and Core Web Vitals after a couple of weeks.
+5. **Analytics.** Confirm GA4 (`G-LRVTSL17XT`) is receiving data, and mark form submissions as conversions.
+6. **Photos.** Take pool surround and commercial job photos, and before/afters of more suburbs. They'd make those pages and any future suburb pages much stronger.
+7. **Business facts to confirm and then add.** Public liability insurance, the base suburb/postcode for the profile, and trading hours.
+8. **Cloudflare.** Optionally add `.assetsignore` (see above) and confirm cache headers took effect after deploy.
