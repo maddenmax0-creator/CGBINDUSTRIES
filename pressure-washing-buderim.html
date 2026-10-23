@@ -382,8 +382,8 @@
     .footer-nav a:hover { color: var(--white); }
     .footer-right { text-align: right; font-size: 0.72rem; color: var(--muted); line-height: 1.9; }
     .footer-legal { display: flex; gap: 16px; margin-top: 4px; justify-content: flex-end; }
-    .footer-legal a { font-size: 0.68rem; color: var(--border); text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s; }
-    .footer-legal a:hover { color: var(--muted); }
+    .footer-legal a { font-size: 0.68rem; color: var(--ash); text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s; }
+    .footer-legal a:hover { color: var(--white); }
 
     /* ── SCROLL REVEAL ── */
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
@@ -567,27 +567,27 @@
       <h2 class="h3">Before &amp; After in Buderim</h2>
     </div>
     <div class="gallery-grid gallery-grid-3">
-      <div class="ba-slider reveal" data-slider>
-        <div class="ba-before"><img src="/img2/driveway-pressure-washing-before.webp" width="1200" height="900" loading="lazy" alt="Exposed aggregate driveway in Buderim before pressure washing" /></div>
-        <div class="ba-after"><img src="/img2/driveway-pressure-washing-after.webp" width="1200" height="900" loading="lazy" alt="Exposed aggregate driveway in Buderim after pressure washing" /></div>
+      <div class="ba-slider reveal" data-slider data-label="Driveway - Buderim">
+        <div class="ba-before"><img src="/img2/driveway-pressure-washing-before.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Exposed aggregate driveway in Buderim before pressure washing" /></div>
+        <div class="ba-after"><img src="/img2/driveway-pressure-washing-after.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Exposed aggregate driveway in Buderim after pressure washing" /></div>
         <div class="ba-handle"><div class="ba-knob"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M6 4L2 9L6 14M12 4L16 9L12 14" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
         <div class="ba-label ba-label-before">Before</div>
         <div class="ba-label ba-label-after">After</div>
         <div class="ba-title">Driveway — Buderim</div>
       </div>
 
-      <div class="ba-slider reveal reveal-d1" data-slider>
-        <div class="ba-before"><img src="/img2/stair-restoration-before.webp" width="1200" height="900" loading="lazy" alt="Concrete stairs in Buderim before restoration" /></div>
-        <div class="ba-after"><img src="/img2/stair-restoration-after.webp" width="1200" height="900" loading="lazy" alt="Concrete stairs in Buderim after restoration" /></div>
+      <div class="ba-slider reveal reveal-d1" data-slider data-label="Stairs - Buderim">
+        <div class="ba-before"><img src="/img2/stair-restoration-before.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Concrete stairs in Buderim before restoration" /></div>
+        <div class="ba-after"><img src="/img2/stair-restoration-after.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Concrete stairs in Buderim after restoration" /></div>
         <div class="ba-handle"><div class="ba-knob"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M6 4L2 9L6 14M12 4L16 9L12 14" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
         <div class="ba-label ba-label-before">Before</div>
         <div class="ba-label ba-label-after">After</div>
         <div class="ba-title">Stairs — Buderim</div>
       </div>
 
-      <div class="ba-slider reveal reveal-d2" data-slider>
-        <div class="ba-before"><img src="/img2/path-restoration-before.webp" width="1200" height="900" loading="lazy" alt="Concrete path in Buderim before restoration" /></div>
-        <div class="ba-after"><img src="/img2/path-restoration-after.webp" width="1200" height="900" loading="lazy" alt="Concrete path in Buderim after restoration" /></div>
+      <div class="ba-slider reveal reveal-d2" data-slider data-label="Path - Buderim">
+        <div class="ba-before"><img src="/img2/path-restoration-before.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Concrete path in Buderim before restoration" /></div>
+        <div class="ba-after"><img src="/img2/path-restoration-after.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Concrete path in Buderim after restoration" /></div>
         <div class="ba-handle"><div class="ba-knob"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M6 4L2 9L6 14M12 4L16 9L12 14" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
         <div class="ba-label ba-label-before">Before</div>
         <div class="ba-label ba-label-after">After</div>
@@ -678,17 +678,25 @@
       <div class="footer-tag">Concrete · Restoration · Protection</div>
     </div>
     <ul class="footer-nav">
-      <li><a href="/pressure-washing">Pressure Washing</a></li>
-      <li><a href="/concrete-sealing">Concrete Sealing</a></li>
       <li><a href="/#gallery">Gallery</a></li>
       <li><a href="/#why">About</a></li>
       <li><a href="/#contact">Contact</a></li>
     </ul>
     <div class="footer-areas">
-      <div class="footer-areas-title">Service Areas</div>
+      <div class="footer-areas-title">Services</div>
       <ul class="footer-areas-list">
-        <li><a href="/pressure-washing-buderim" aria-current="page">Buderim</a></li>
+        <li><a href="/pressure-washing">Pressure Washing</a></li>
+        <li><a href="/driveway-cleaning">Driveway Cleaning</a></li>
+        <li><a href="/concrete-sealing">Concrete Sealing</a></li>
+        <li><a href="/exposed-aggregate-sealing">Exposed Aggregate Sealing</a></li>
+        <li><a href="/pool-surround-and-path-cleaning">Pool Surrounds &amp; Paths</a></li>
+        <li><a href="/commercial-pressure-washing">Commercial</a></li>
+      </ul>
+      <div class="footer-areas-title" style="margin-top:18px;">Service Areas</div>
+      <ul class="footer-areas-list">
+        <li><a href="/pressure-washing-buderim">Buderim</a></li>
         <li><a href="/pressure-washing-forest-glen">Forest Glen</a></li>
+        <li><a href="/service-areas">All Areas</a></li>
       </ul>
     </div>
     <div class="footer-right">
@@ -697,7 +705,7 @@
       <div>ABN 12 508 435 400</div>
       <div style="margin-top:4px;">© 2026 CGB Industries</div>
       <div class="footer-legal">
-        <a href="/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+        <a href="/privacy">Privacy Policy</a>
       </div>
     </div>
   </div>
@@ -737,7 +745,7 @@
 
     slider.setAttribute('tabindex', '0');
     slider.setAttribute('role', 'slider');
-    slider.setAttribute('aria-label', 'Before and after comparison. Use arrow keys to reveal.');
+    slider.setAttribute('aria-label', (slider.dataset.label ? slider.dataset.label + ': before and after comparison. ' : 'Before and after comparison. ') + 'Use arrow keys to reveal.');
     slider.setAttribute('aria-valuemin', '0');
     slider.setAttribute('aria-valuemax', '100');
     slider.setAttribute('aria-valuenow', '50');

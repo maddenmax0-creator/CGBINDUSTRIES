@@ -38,7 +38,10 @@
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+    "@type": [
+      "LocalBusiness",
+      "HomeAndConstructionBusiness"
+    ],
     "@id": "https://cgbindustries.com.au/#business",
     "name": "CGB Industries",
     "image": "https://cgbindustries.com.au/img2/og-image.jpg",
@@ -54,16 +57,82 @@
       "addressCountry": "AU"
     },
     "areaServed": [
-      { "@type": "Place", "name": "Buderim" },
-      { "@type": "Place", "name": "Forest Glen" },
-      { "@type": "Place", "name": "Maroochydore" },
-      { "@type": "Place", "name": "Mooloolaba" },
-      { "@type": "Place", "name": "Caloundra" },
-      { "@type": "Place", "name": "Nambour" },
-      { "@type": "Place", "name": "Sippy Downs" },
-      { "@type": "Place", "name": "Mountain Creek" },
-      { "@type": "Place", "name": "Mons" },
-      { "@type": "Place", "name": "Sunshine Coast QLD" }
+      {
+        "@type": "City",
+        "name": "Buderim",
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Sunshine Coast, Queensland"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Forest Glen",
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Sunshine Coast, Queensland"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Maroochydore",
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Sunshine Coast, Queensland"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Mooloolaba",
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Sunshine Coast, Queensland"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Caloundra",
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Sunshine Coast, Queensland"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Nambour",
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Sunshine Coast, Queensland"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Sippy Downs",
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Sunshine Coast, Queensland"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Mountain Creek",
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Sunshine Coast, Queensland"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Mons",
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Sunshine Coast, Queensland"
+        }
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Sunshine Coast, Queensland"
+      }
     ],
     "sameAs": [
       "https://www.instagram.com/cgb_industries",
@@ -78,7 +147,17 @@
           "itemOffered": {
             "@type": "Service",
             "name": "Pressure Washing",
-            "description": "Rotary surface cleaning for driveways, paths, pool surrounds, commercial surfaces, fencing and retaining walls."
+            "description": "Rotary surface cleaning for driveways, paths, pool surrounds, commercial surfaces, fencing and retaining walls.",
+            "url": "https://cgbindustries.com.au/pressure-washing"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Driveway Cleaning",
+            "description": "Rotary cleaning of concrete, exposed aggregate and coloured driveways.",
+            "url": "https://cgbindustries.com.au/driveway-cleaning"
           }
         },
         {
@@ -86,13 +165,60 @@
           "itemOffered": {
             "@type": "Service",
             "name": "Concrete Sealing",
-            "description": "Clear or colour-enhanced sealers rated for UV and salt exposure, including anti-slip coatings."
+            "description": "Clear or colour-enhanced sealers rated for UV and salt exposure, including anti-slip coatings.",
+            "url": "https://cgbindustries.com.au/concrete-sealing"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Exposed Aggregate Sealing",
+            "description": "Cleaning and sealing of exposed aggregate driveways, paths and entries.",
+            "url": "https://cgbindustries.com.au/exposed-aggregate-sealing"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Pool Surround, Paver and Path Cleaning",
+            "description": "Rotary cleaning of pool surrounds, pavers, paths and alfresco areas.",
+            "url": "https://cgbindustries.com.au/pool-surround-and-path-cleaning"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Commercial Pressure Washing",
+            "description": "Pressure washing for carparks, entrances, walkways and body corporate common areas.",
+            "url": "https://cgbindustries.com.au/commercial-pressure-washing"
           }
         }
       ]
-    }
+    },
+    "knowsAbout": [
+      "Pressure washing",
+      "Concrete cleaning",
+      "Concrete sealing",
+      "Exposed aggregate",
+      "Driveway cleaning"
+    ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://cgbindustries.com.au/#website",
+    "url": "https://cgbindustries.com.au/",
+    "name": "CGB Industries",
+    "inLanguage": "en-AU",
+    "publisher": {
+      "@id": "https://cgbindustries.com.au/#business"
+    }
+  }</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&family=Inter:wght@300;400;500&display=swap" media="print" onload="this.media='all'" />
@@ -526,6 +652,21 @@
       max-width: 1360px;
       margin: 0 auto;
     }
+
+    .services-more {
+      margin-top: 28px;
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--ash);
+      line-height: 1.9;
+    }
+    .services-more a {
+      color: var(--concrete);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .services-more a:hover { color: var(--white); border-color: var(--ash); }
 
     /* Per audit: break 3 equal columns — use asymmetric layout */
     /* Large card left, two stacked right */
@@ -1247,7 +1388,7 @@
       transition: color 0.2s;
     }
 
-    .footer-legal a:hover { color: var(--muted); }
+    .footer-legal a:hover { color: var(--white); }
 
     /* ── SCROLL REVEAL ── */
     .reveal {
@@ -1443,6 +1584,7 @@
         </a>
       </div>
     </div>
+    <p class="services-more reveal">Also: <a href="/driveway-cleaning">driveway cleaning</a>, <a href="/exposed-aggregate-sealing">exposed aggregate sealing</a>, <a href="/pool-surround-and-path-cleaning">pool surrounds and paths</a> and <a href="/commercial-pressure-washing">commercial pressure washing</a>. Working in <a href="/pressure-washing-buderim">Buderim</a>, <a href="/pressure-washing-forest-glen">Forest Glen</a> and <a href="/service-areas">across the Sunshine Coast</a>.</p>
   </div>
 </section>
 
@@ -1494,36 +1636,36 @@
     </div>
 
     <div class="gallery-grid">
-      <div class="ba-slider" data-slider>
-        <div class="ba-before"><img src="/img2/driveway-pressure-washing-before.webp" width="1200" height="900" loading="lazy" alt="Exposed aggregate driveway in Buderim before pressure washing" /></div>
-        <div class="ba-after"><img src="/img2/driveway-pressure-washing-after.webp" width="1200" height="900" loading="lazy" alt="Exposed aggregate driveway in Buderim after pressure washing" /></div>
+      <div class="ba-slider" data-slider data-label="Driveway Restoration">
+        <div class="ba-before"><img src="/img2/driveway-pressure-washing-before.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Exposed aggregate driveway in Buderim before pressure washing" /></div>
+        <div class="ba-after"><img src="/img2/driveway-pressure-washing-after.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Exposed aggregate driveway in Buderim after pressure washing" /></div>
         <div class="ba-handle"><div class="ba-knob"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M6 4L2 9L6 14M12 4L16 9L12 14" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
         <div class="ba-label ba-label-before">Before</div>
         <div class="ba-label ba-label-after">After</div>
         <div class="ba-title">Driveway Restoration</div>
       </div>
 
-      <div class="ba-slider" data-slider>
-        <div class="ba-before"><img src="/img2/stair-restoration-before.webp" width="1200" height="900" loading="lazy" alt="Concrete stairs in Buderim before restoration" /></div>
-           <div class="ba-after"><img src="/img2/stair-restoration-after.webp" width="1200" height="900" loading="lazy" alt="Concrete stairs in Buderim after restoration" /></div>
+      <div class="ba-slider" data-slider data-label="Stair Restoration">
+        <div class="ba-before"><img src="/img2/stair-restoration-before.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Concrete stairs in Buderim before restoration" /></div>
+           <div class="ba-after"><img src="/img2/stair-restoration-after.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Concrete stairs in Buderim after restoration" /></div>
         <div class="ba-handle"><div class="ba-knob"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M6 4L2 9L6 14M12 4L16 9L12 14" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
         <div class="ba-label ba-label-before">Before</div>
         <div class="ba-label ba-label-after">After</div>
         <div class="ba-title">Stair Restoration</div>
       </div>
 
-      <div class="ba-slider" data-slider>
-        <div class="ba-before"><img src="/img2/concrete-sealing-before.webp" width="1299" height="900" loading="lazy" alt="Concrete driveway in Forest Glen before sealing" /></div>
-        <div class="ba-after"><img src="/img2/concrete-sealing-after.webp" width="1200" height="900" loading="lazy" alt="Concrete driveway in Forest Glen after sealing" /></div>
+      <div class="ba-slider" data-slider data-label="Concrete Restoration and Sealing">
+        <div class="ba-before"><img src="/img2/concrete-sealing-before.webp" width="1299" height="900" loading="lazy" decoding="async" alt="Concrete driveway in Forest Glen before sealing" /></div>
+        <div class="ba-after"><img src="/img2/concrete-sealing-after.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Concrete driveway in Forest Glen after sealing" /></div>
         <div class="ba-handle"><div class="ba-knob"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M6 4L2 9L6 14M12 4L16 9L12 14" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
         <div class="ba-label ba-label-before">Before</div>
         <div class="ba-label ba-label-after">After</div>
         <div class="ba-title">Concrete Restoration and Sealing</div>
       </div>
 
-      <div class="ba-slider" data-slider>
-        <div class="ba-before"><img src="/img2/path-restoration-before.webp" width="1200" height="900" loading="lazy" alt="Concrete path in Buderim before restoration" /></div>
-           <div class="ba-after"><img src="/img2/path-restoration-after.webp" width="1200" height="900" loading="lazy" alt="Concrete path in Buderim after restoration" /></div>
+      <div class="ba-slider" data-slider data-label="Path Restoration">
+        <div class="ba-before"><img src="/img2/path-restoration-before.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Concrete path in Buderim before restoration" /></div>
+           <div class="ba-after"><img src="/img2/path-restoration-after.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Concrete path in Buderim after restoration" /></div>
         <div class="ba-handle"><div class="ba-knob"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M6 4L2 9L6 14M12 4L16 9L12 14" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
         <div class="ba-label ba-label-before">Before</div>
         <div class="ba-label ba-label-after">After</div>
@@ -1744,18 +1886,26 @@
       <div class="footer-tag">Concrete · Restoration · Protection</div>
     </div>
     <ul class="footer-nav">
-      <li><a href="/pressure-washing">Pressure Washing</a></li>
-      <li><a href="/concrete-sealing">Concrete Sealing</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#why">About</a></li>
       <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="footer-areas">
-      <div class="footer-areas-title">Service Areas</div>
+      <div class="footer-areas-title">Services</div>
+      <ul class="footer-areas-list">
+        <li><a href="/pressure-washing">Pressure Washing</a></li>
+        <li><a href="/driveway-cleaning">Driveway Cleaning</a></li>
+        <li><a href="/concrete-sealing">Concrete Sealing</a></li>
+        <li><a href="/exposed-aggregate-sealing">Exposed Aggregate Sealing</a></li>
+        <li><a href="/pool-surround-and-path-cleaning">Pool Surrounds &amp; Paths</a></li>
+        <li><a href="/commercial-pressure-washing">Commercial</a></li>
+      </ul>
+      <div class="footer-areas-title" style="margin-top:18px;">Service Areas</div>
       <ul class="footer-areas-list">
         <li><a href="/pressure-washing-buderim">Buderim</a></li>
         <li><a href="/pressure-washing-forest-glen">Forest Glen</a></li>
+        <li><a href="/service-areas">All Areas</a></li>
       </ul>
     </div>
     <div class="footer-right">
@@ -1764,7 +1914,7 @@
       <div>ABN 12 508 435 400</div>
       <div style="margin-top:4px;">© 2026 CGB Industries</div>
       <div class="footer-legal">
-        <a href="/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+        <a href="/privacy">Privacy Policy</a>
       </div>
     </div>
   </div>
@@ -1843,7 +1993,7 @@
     // Make focusable and announce as a slider
     slider.setAttribute('tabindex', '0');
     slider.setAttribute('role', 'slider');
-    slider.setAttribute('aria-label', 'Before and after comparison. Use arrow keys to reveal.');
+    slider.setAttribute('aria-label', (slider.dataset.label ? slider.dataset.label + ': before and after comparison. ' : 'Before and after comparison. ') + 'Use arrow keys to reveal.');
     slider.setAttribute('aria-valuemin', '0');
     slider.setAttribute('aria-valuemax', '100');
     slider.setAttribute('aria-valuenow', '50');
