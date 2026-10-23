@@ -1,0 +1,10 @@
+# Files in the repo that are not part of the public site.
+# Same syntax as .gitignore. Cloudflare (Workers static assets) skips these on upload.
+.assetsignore
+.gitignore
+.git
+.DS_Store
+**/.DS_Store
+SEO-AUDIT.md
+unedited
+doc
