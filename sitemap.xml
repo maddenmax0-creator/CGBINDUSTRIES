@@ -2,32 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://cgbindustries.com.au/</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-10-23</lastmod>
   </url>
   <url>
     <loc>https://cgbindustries.com.au/pressure-washing</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-10-23</lastmod>
+  </url>
+  <url>
+    <loc>https://cgbindustries.com.au/driveway-cleaning</loc>
+    <lastmod>2026-10-23</lastmod>
   </url>
   <url>
     <loc>https://cgbindustries.com.au/concrete-sealing</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-10-23</lastmod>
+  </url>
+  <url>
+    <loc>https://cgbindustries.com.au/exposed-aggregate-sealing</loc>
+    <lastmod>2026-10-23</lastmod>
+  </url>
+  <url>
+    <loc>https://cgbindustries.com.au/pool-surround-and-path-cleaning</loc>
+    <lastmod>2026-10-23</lastmod>
+  </url>
+  <url>
+    <loc>https://cgbindustries.com.au/commercial-pressure-washing</loc>
+    <lastmod>2026-10-23</lastmod>
+  </url>
+  <url>
+    <loc>https://cgbindustries.com.au/service-areas</loc>
+    <lastmod>2026-10-23</lastmod>
   </url>
   <url>
     <loc>https://cgbindustries.com.au/pressure-washing-buderim</loc>
-    <lastmod>2026-09-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-10-23</lastmod>
   </url>
   <url>
     <loc>https://cgbindustries.com.au/pressure-washing-forest-glen</loc>
-    <lastmod>2026-09-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-10-23</lastmod>
   </url>
 </urlset>
