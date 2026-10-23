@@ -1,28 +1,21 @@
-/* Quote launcher: small round button (bottom-right) that opens a panel with three ways to get a quote.
-   Never opens on its own. Hidden while the enquiry form is on screen. First-party, no dependencies. */
+/* Enquire button: fixed bottom-right, expands upward into three ways to get a quote.
+   Never opens on its own. Hidden while the enquiry form is on screen, and on desktop until the
+   visitor scrolls past the hero (the nav already has a quote button there). First-party, no dependencies. */
 (function () {
   var PHONE_DISPLAY = '0414 438 169';
   var PHONE_RAW = '0414438169';
 
   var css = '\
-.ql{position:fixed;right:16px;bottom:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:90;font-family:"Inter",sans-serif}\
+.ql{position:fixed;right:16px;bottom:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:90;display:flex;flex-direction:column;align-items:flex-end;gap:8px;font-family:"Inter",sans-serif}\
 .ql[hidden]{display:none}\
-.ql-btn{width:48px;height:48px;border-radius:50%;border:1px solid rgba(8,8,8,.15);background:#fff;color:#080808;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 18px rgba(0,0,0,.45);transition:background .2s,transform .15s}\
-.ql-btn:hover{background:#C8C3BC}\
-.ql-btn:active{transform:scale(.96)}\
-.ql-btn:focus-visible,.ql-close:focus-visible,.ql-opt:focus-visible{outline:2px solid #C8C3BC;outline-offset:3px}\
-.ql-btn svg{width:22px;height:22px}\
-.ql-panel{position:absolute;right:0;bottom:60px;width:min(300px,calc(100vw - 32px));background:#161616;border:1px solid #242424;padding:20px 18px 18px;box-shadow:0 8px 32px rgba(0,0,0,.55)}\
-.ql-panel[hidden]{display:none}\
-.ql-title{font-size:.9rem;line-height:1.5;color:#E8E8E8;font-weight:400;margin:0 28px 14px 0}\
-.ql-close{position:absolute;top:6px;right:6px;width:36px;height:36px;background:none;border:none;color:#8a8a8a;cursor:pointer;font-size:1.3rem;line-height:1}\
-.ql-close:hover{color:#fff}\
-.ql-opt{display:block;width:100%;box-sizing:border-box;margin:0 0 8px;padding:13px 14px;text-align:center;text-decoration:none;font-family:"Oswald",sans-serif;font-weight:400;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;background:none;border:1px solid #383838;color:#E8E8E8;cursor:pointer;transition:background .2s,color .2s,border-color .2s}\
-.ql-opt:last-child{margin-bottom:0}\
-.ql-opt:hover{border-color:#8a8a8a;color:#fff}\
-.ql-opt-primary{background:#fff;border-color:#fff;color:#080808}\
-.ql-opt-primary:hover{background:#C8C3BC;border-color:#C8C3BC;color:#080808}\
-@media (prefers-reduced-motion:reduce){.ql-btn{transition:none}}';
+.ql-btn,.ql-opt{display:block;box-sizing:border-box;background:#fff;color:#080808;border:none;border-radius:0;cursor:pointer;text-decoration:none;text-align:center;font-family:"Inter",sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;padding:12px 22px;box-shadow:0 4px 18px rgba(0,0,0,.45);transition:background .2s,transform .15s}\
+.ql-btn:hover,.ql-opt:hover{background:#C8C3BC}\
+.ql-btn:active,.ql-opt:active{transform:scale(.98)}\
+.ql-btn:focus-visible,.ql-opt:focus-visible{outline:2px solid #C8C3BC;outline-offset:3px}\
+.ql-opts{display:flex;flex-direction:column;gap:8px;align-self:stretch;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .2s ease-out,transform .2s ease-out,visibility 0s linear .2s}\
+.ql.open .ql-opts{opacity:1;visibility:visible;transform:none;transition:opacity .2s ease-out,transform .2s ease-out,visibility 0s}\
+@media (max-width:768px){.ql-btn,.ql-opt{padding:10px 16px;font-size:.66rem}}\
+@media (prefers-reduced-motion:reduce){.ql-btn,.ql-opt,.ql-opts,.ql.open .ql-opts{transition:none}.ql-opts{transform:none}}';
 
   var style = document.createElement('style');
   style.textContent = css;
@@ -34,35 +27,36 @@
   var root = document.createElement('div');
   root.className = 'ql';
   root.innerHTML =
-    '<div class="ql-panel" id="ql-panel" role="dialog" aria-label="Get a quote" hidden>' +
-      '<button type="button" class="ql-close" aria-label="Close">&times;</button>' +
-      '<p class="ql-title">Need a free quote? Pick the easiest option:</p>' +
-      '<a class="ql-opt ql-opt-primary" href="' + quoteHref + '" data-ql-quote>Get a free quote</a>' +
+    '<div class="ql-opts" id="ql-opts">' +
+      '<a class="ql-opt" href="' + quoteHref + '" data-ql-quote>Get a free quote</a>' +
       '<a class="ql-opt" href="tel:' + PHONE_RAW + '">Call ' + PHONE_DISPLAY + '</a>' +
       '<a class="ql-opt" href="sms:' + PHONE_RAW + '">Text us</a>' +
     '</div>' +
-    '<button type="button" class="ql-btn" aria-label="Get a free quote" aria-expanded="false" aria-controls="ql-panel">' +
-      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.5-4.6A8 8 0 1 1 21 12z"/></svg>' +
-    '</button>';
+    '<button type="button" class="ql-btn" aria-expanded="false" aria-controls="ql-opts">Enquire</button>';
   document.body.appendChild(root);
 
   var btn = root.querySelector('.ql-btn');
-  var panel = root.querySelector('.ql-panel');
+  var opts = root.querySelector('.ql-opts');
+  var isOpen = false;
 
   function setOpen(open, returnFocus) {
-    panel.hidden = !open;
+    isOpen = open;
+    root.classList.toggle('open', open);
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    if (open) root.querySelector('.ql-opt').focus();
-    else if (returnFocus) btn.focus();
+    if (open) opts.removeAttribute('inert'); else opts.setAttribute('inert', '');
+    if (!open && returnFocus) btn.focus();
   }
+  setOpen(false);
 
-  btn.addEventListener('click', function () { setOpen(panel.hidden); });
-  root.querySelector('.ql-close').addEventListener('click', function () { setOpen(false, true); });
+  btn.addEventListener('click', function (e) {
+    setOpen(!isOpen);
+    if (isOpen && e.detail === 0) root.querySelector('.ql-opt').focus(); // keyboard activation
+  });
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && !panel.hidden) setOpen(false, true);
+    if (e.key === 'Escape' && isOpen) setOpen(false, true);
   });
   document.addEventListener('click', function (e) {
-    if (!panel.hidden && !root.contains(e.target)) setOpen(false);
+    if (isOpen && !root.contains(e.target)) setOpen(false);
   });
 
   root.querySelector('[data-ql-quote]').addEventListener('click', function (e) {
@@ -74,12 +68,35 @@
     if (history.replaceState) history.replaceState(null, '', '#contact');
   });
 
-  // Hide the launcher while the enquiry form is in view.
+  // Visibility: hidden while the form is in view; on desktop also hidden until past the hero.
+  var formInView = false;
+  var pastHero = true;
+  var desktop = window.matchMedia ? window.matchMedia('(min-width: 769px)') : { matches: false };
+  var hero = document.querySelector('main > section, main > header');
+
+  function update() {
+    var hide = formInView || (desktop.matches && !pastHero);
+    if (hide && isOpen) setOpen(false);
+    root.hidden = hide;
+  }
+  function checkHero() {
+    var bottom = hero ? hero.getBoundingClientRect().bottom : window.innerHeight;
+    pastHero = bottom <= 0;
+    update();
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { ticking = false; checkHero(); });
+  }, { passive: true });
+  window.addEventListener('resize', checkHero);
+
   if (form && 'IntersectionObserver' in window) {
     new IntersectionObserver(function (entries) {
-      var visible = entries[0].isIntersecting;
-      if (visible) setOpen(false);
-      root.hidden = visible;
+      formInView = entries[0].isIntersecting;
+      update();
     }, { threshold: 0 }).observe(form.querySelector('form') || form);
   }
+  checkHero();
 })();
