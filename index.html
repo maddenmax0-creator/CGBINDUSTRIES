@@ -1023,7 +1023,7 @@
       line-height: 1.5;
     }
 
-    /* ── TESTIMONIALS ── */
+    /* ── REVIEWS ── */
     #testimonials {
       background: var(--black);
       padding: 96px 52px;
@@ -1031,65 +1031,65 @@
 
     .testi-inner { max-width: 1360px; margin: 0 auto; }
 
-    .testi-top { margin-bottom: 56px; }
-
-    /* Asymmetric: one large left, two stacked right */
-    .testi-layout {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 1px;
-      background: var(--border);
+    .rv-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 28px 32px;
+      margin-bottom: 48px;
     }
 
-    .testi-stack {
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-      gap: 1px;
-      background: var(--border);
-    }
-
-    .testi-card {
-      background: var(--card);
-      padding: 40px 36px;
-      position: relative;
-    }
-
-    .testi-card.large { padding: 52px 44px; }
-
-    .testi-card::after {
-      content: '\201C';
-      position: absolute;
-      top: 20px; right: 28px;
+    .rv-summary { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .rv-g { width: 26px; height: 26px; flex: none; }
+    .rv-stars { color: var(--concrete); font-size: 0.95rem; letter-spacing: 2px; }
+    .rv-rated {
       font-family: 'Oswald', sans-serif;
       font-weight: 400;
-      font-size: 5.5rem;
-      color: var(--border);
-      line-height: 1;
-      pointer-events: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--white);
     }
 
-    .testi-stars {
+    .rv-carousel { position: relative; }
+
+    .rv-track {
       display: flex;
-      gap: 2px;
-      margin-bottom: 18px;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
+    }
+    .rv-track::-webkit-scrollbar { display: none; }
+    .rv-track:focus-visible { outline: 2px solid var(--concrete); outline-offset: 4px; }
+
+    .rv-card {
+      flex: 0 0 calc((100% - 32px) / 3);
+      scroll-snap-align: start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 30px 28px;
+      display: flex;
+      flex-direction: column;
     }
 
-    .testi-stars span { color: var(--concrete); font-size: 0.78rem; }
+    .rv-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 
-    .testi-quote {
-      font-size: 0.95rem;
-      color: var(--light);
-      line-height: 1.8;
-      font-weight: 300;
-      margin-bottom: 28px;
-      position: relative;
-      z-index: 1;
-      text-wrap: pretty;
+    .rv-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--mid);
+      color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      flex: none;
     }
 
-    .testi-card.large .testi-quote { font-size: 1.05rem; }
-
-    .testi-name {
+    .rv-name {
       font-family: 'Oswald', sans-serif;
       font-weight: 400;
       font-size: 0.85rem;
@@ -1098,12 +1098,71 @@
       color: var(--white);
     }
 
-    .testi-suburb {
-      font-size: 0.74rem;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-      margin-top: 3px;
+    .rv-source { font-size: 0.72rem; color: var(--ash); letter-spacing: 0.04em; margin-top: 2px; }
+
+    .rv-card .rv-stars { font-size: 0.8rem; margin-bottom: 14px; }
+
+    .rv-text {
+      font-size: 0.92rem;
+      color: var(--light);
+      line-height: 1.75;
+      font-weight: 300;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+      overflow: hidden;
     }
+    .rv-card.expanded .rv-text { -webkit-line-clamp: unset; display: block; overflow: visible; }
+
+    .rv-more {
+      align-self: flex-start;
+      margin-top: 12px;
+      background: none;
+      border: none;
+      padding: 4px 0;
+      cursor: pointer;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--concrete);
+      border-bottom: 1px solid var(--border);
+    }
+    .rv-more:hover { color: var(--white); }
+    .rv-more[hidden] { display: none; }
+
+    .rv-nav { display: none; gap: 8px; }
+    .rv-arrow {
+      width: 44px; height: 44px;
+      background: none;
+      border: 1px solid var(--mid);
+      color: var(--white);
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .rv-arrow:hover:not(:disabled) { border-color: var(--ash); background: var(--card); }
+    .rv-arrow:disabled { opacity: 0.3; cursor: default; }
+    .rv-arrow svg { width: 16px; height: 16px; }
+
+    .rv-actions { display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; margin-top: 36px; }
+    .rv-link-ghost {
+      display: inline-flex;
+      align-items: center;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ash);
+      text-decoration: none;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .rv-link-ghost:hover { color: var(--white); border-color: var(--ash); }
+
+    @media (min-width: 901px) { .rv-nav { display: flex; } }
+    @media (min-width: 601px) and (max-width: 900px) { .rv-card { flex-basis: calc((100% - 16px) / 2); } }
 
     /* ── CTA ── */
     #cta-banner {
@@ -1457,8 +1516,11 @@
       .stat-val { font-size: 2.4rem; }
 
       .testi-inner { max-width: 100%; }
-      .testi-layout { grid-template-columns: 1fr; }
-      .testi-stack { grid-template-rows: auto auto; }
+      .rv-card { flex-basis: 84%; padding: 26px 22px; }
+      .rv-top { margin-bottom: 32px; }
+      .rv-actions { flex-direction: column; align-items: stretch; }
+      .rv-actions .btn-primary, .rv-link-ghost { justify-content: center; }
+      .rv-link-ghost { border: 1px solid var(--border); padding: 14px 0; }
 
       .cta-inner { flex-direction: column; align-items: flex-start; max-width: 100%; }
       #cta-banner::before { font-size: 8rem; right: -20px; }
@@ -1482,6 +1544,49 @@
       .marquee-inner { animation: none; }
       .hero-stamp, .hero-stamp-sub, .hero-h1, .hero-body, .hero-actions { opacity: 1; }
     }
+
+    /* ── SERVICES DROPDOWN ── */
+    .nav-dd { position: relative; }
+    .nav-dd-toggle {
+      background: none; border: none; cursor: pointer; padding: 0;
+      font: inherit; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+      display: inline-flex; align-items: center; gap: 7px; transition: color 0.2s;
+    }
+    .nav-dd-toggle:hover, .nav-dd.open .nav-dd-toggle, .nav-dd-toggle:focus-visible { color: var(--white); }
+    .nav-dd-toggle svg { width: 9px; height: 9px; transition: transform 0.2s; }
+    .nav-dd.open .nav-dd-toggle svg { transform: rotate(180deg); }
+    .nav-dd-menu {
+      display: none; position: absolute; top: 100%; left: -20px; min-width: 290px;
+      padding-top: 18px; list-style: none; z-index: var(--z-nav);
+    }
+    .nav-dd-menu-inner {
+      background: rgba(8,8,8,0.98); border: 1px solid var(--border); padding: 8px 0;
+      list-style: none;
+    }
+    .nav-dd.open .nav-dd-menu { display: block; }
+    @media (hover: hover) {
+      .nav-dd:hover .nav-dd-menu { display: block; }
+      .nav-dd:hover .nav-dd-toggle { color: var(--white); }
+      .nav-dd:hover .nav-dd-toggle svg { transform: rotate(180deg); }
+    }
+    .nav-dd-menu a { display: block; padding: 11px 20px; letter-spacing: 0.14em; white-space: nowrap; }
+    .nav-dd-menu a:hover, .nav-dd-menu a:focus-visible { background: rgba(255,255,255,0.05); color: var(--white); }
+    .nav-dd-menu .nav-dd-all { border-top: 1px solid var(--border); margin-top: 6px; padding-top: 6px; }
+
+    .mobile-dd-toggle {
+      display: flex; justify-content: space-between; align-items: center; width: 100%;
+      padding: 14px 24px; background: none; border: none; border-bottom: 1px solid var(--border);
+      cursor: pointer; text-align: left;
+      font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 1rem;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--ash);
+    }
+    .mobile-dd-toggle:hover, .mobile-dd-toggle[aria-expanded="true"] { color: var(--white); }
+    .mobile-dd-toggle svg { width: 12px; height: 12px; transition: transform 0.2s; }
+    .mobile-dd-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+    .mobile-menu { max-height: calc(100vh - 56px); overflow-y: auto; }
+    .mobile-dd-list[hidden] { display: none; }
+    .mobile-menu .mobile-dd-list a { padding-left: 40px; font-size: 0.88rem; color: var(--muted); }
   </style>
 </head>
 <body>
@@ -1495,7 +1600,18 @@
       <a href="/"><img src="/logo1.png" alt="CGB Industries" width="461" height="200" /></a>
     </div>
     <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
+      <li class="nav-dd">
+        <button type="button" class="nav-dd-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="nav-dd-menu">Services <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dd-menu" id="nav-dd-menu"><ul class="nav-dd-menu-inner">
+          <li><a href="/pressure-washing">Pressure Washing</a></li>
+          <li><a href="/driveway-cleaning">Driveway Cleaning</a></li>
+          <li><a href="/concrete-sealing">Concrete Sealing</a></li>
+          <li><a href="/exposed-aggregate-sealing">Exposed Aggregate Sealing</a></li>
+          <li><a href="/pool-surround-and-path-cleaning">Pool Surround &amp; Path Cleaning</a></li>
+          <li><a href="/commercial-pressure-washing">Commercial Pressure Washing</a></li>
+          <li class="nav-dd-all"><a href="/service-areas">Service Areas</a></li>
+        </ul></div>
+      </li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#why">About</a></li>
       <li><a href="#testimonials">Reviews</a></li>
@@ -1508,7 +1624,16 @@
 </nav>
 
 <div class="mobile-menu" id="mobile-menu">
-  <a href="#services">Services</a>
+  <button type="button" class="mobile-dd-toggle" id="mobile-dd-toggle" aria-expanded="false" aria-controls="mobile-dd-list">Services <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="mobile-dd-list" id="mobile-dd-list" hidden>
+    <a href="/pressure-washing">Pressure Washing</a>
+    <a href="/driveway-cleaning">Driveway Cleaning</a>
+    <a href="/concrete-sealing">Concrete Sealing</a>
+    <a href="/exposed-aggregate-sealing">Exposed Aggregate Sealing</a>
+    <a href="/pool-surround-and-path-cleaning">Pool Surround &amp; Path Cleaning</a>
+    <a href="/commercial-pressure-washing">Commercial Pressure Washing</a>
+    <a href="/service-areas">Service Areas</a>
+  </div>
   <a href="#gallery">Gallery</a>
   <a href="#why">About</a>
   <a href="#testimonials">Reviews</a>
@@ -1739,35 +1864,32 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- REVIEWS -->
 <section id="testimonials" aria-label="Customer reviews">
   <div class="testi-inner">
-    <div class="testi-top reveal">
-      <div class="label">Reviews</div>
-      <h2 class="h2">What Our Customers Say</h2>
+    <div class="rv-top reveal">
+      <div>
+        <div class="label">Reviews</div>
+        <h2 class="h2">What Our Customers Say</h2>
+        <div class="rv-summary" style="margin-top:20px">
+          <svg class="rv-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.2 5.5-4.7 7.2l7.5 5.8c4.4-4.1 7-10.1 7-17.5z"/><path fill="#FBBC05" d="M10.5 28.7A14.5 14.5 0 0 1 9.5 24c0-1.6.3-3.2.8-4.7l-7.9-6.1A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.8l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.5-5.8c-2.1 1.4-4.9 2.3-8.4 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg>
+          <span class="rv-stars" aria-hidden="true">★★★★★</span>
+          <span class="rv-rated" id="rv-rated">Rated 5.0 on Google</span>
+        </div>
+      </div>
+      <div class="rv-nav">
+        <button type="button" class="rv-arrow" id="rv-prev" aria-label="Previous reviews"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button type="button" class="rv-arrow" id="rv-next" aria-label="Next reviews"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
     </div>
 
-    <div class="testi-layout">
-      <div class="testi-card large reveal">
-        <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="testi-quote">"I had my driveway done last week and I am thrilled with the result. More importantly Chris is Honest, enthusiastic conscientious and a bloody nice guy to boot. Thanks Chris."</p>
-        <div class="testi-name">Anne G.</div>
-        <div class="testi-suburb">Forest Glen</div>
-      </div>
-      <div class="testi-stack">
-        <div class="testi-card reveal reveal-d1">
-          <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-          <p class="testi-quote">"Cheers for doing our driveway, looks epic! Really happy with the job, would highly recommend."</p>
-          <div class="testi-name">Wayne T.</div>
-          <div class="testi-suburb">Mons</div>
-        </div>
-        <div class="testi-card reveal reveal-d2">
-          <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-          <p class="testi-quote">"Got a quote the same day I called. Price was fair, work was excellent. Our carpark looks amazing."</p>
-          <div class="testi-name">David T.</div>
-          <div class="testi-suburb">Maroochydore</div>
-        </div>
-      </div>
+    <div class="rv-carousel reveal">
+      <div class="rv-track" id="rv-track" tabindex="0" role="region" aria-label="Google reviews. Swipe or scroll sideways to read more."></div>
+    </div>
+
+    <div class="rv-actions reveal">
+      <a href="https://maps.google.com/?cid=16532661349836979989" class="btn-primary" target="_blank" rel="noopener">See our reviews on Google</a>
+      <a href="https://g.page/r/CRX_3GTnz2_lEBM/review" class="rv-link-ghost" target="_blank" rel="noopener">Leave us a review</a>
     </div>
   </div>
 </section>
@@ -1921,6 +2043,17 @@
 </footer>
 
 <script>
+  // ══ REVIEWS: add new Google reviews here (one line each). The "Rated X" average updates itself. ══
+  const REVIEWS = [
+    { name: 'Jacinta M.', rating: 5, text: 'Wow! What a difference. Our 10 year old driveway was looking so stained and shabby. Chris came and worked his magic on it...and it looks brand new!!! Absolutely amazing! Thanks so much!!!' },
+    { name: 'Camilla S.', rating: 5, text: 'Chris pays great attention to detail and did an amazing job for us- high pressuring and sealing our front driveway. Great communication and always on time' },
+    { name: 'Average Joes', rating: 5, text: 'Chris came and did approx 300m2 of pressure cleaning at our place. Quality was beyond, price was fantastic. Highly recommend.' },
+    { name: 'Tim S.', rating: 5, text: 'Chris was on time and had all the gear required. Polite and very knowledgeable. Great work completed.' },
+    { name: 'Tim S.', rating: 5, text: 'Great job, great service, great people. Thank you. Driveway looks great!' },
+    { name: 'Damien S.', rating: 5, text: 'Professional work, friendly and great communication.' },
+    { name: 'Adam G.', rating: 5, text: 'Fantastic job, looks awesome.' }
+  ];
+
   // ── CONTACT FORM ──
   const form = document.getElementById('contact-form');
   const btn  = document.getElementById('submit-btn');
@@ -1962,6 +2095,102 @@
   }, { threshold: 0.12 });
 
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  // ── SERVICES DROPDOWN ──
+  const dd = document.querySelector('.nav-dd');
+  if (dd) {
+    const ddBtn = dd.querySelector('.nav-dd-toggle');
+    const setDd = open => { dd.classList.toggle('open', open); ddBtn.setAttribute('aria-expanded', open); };
+    ddBtn.addEventListener('click', () => setDd(!dd.classList.contains('open')));
+    dd.addEventListener('focusout', e => { if (!dd.contains(e.relatedTarget)) setDd(false); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && dd.classList.contains('open')) { setDd(false); ddBtn.focus(); }
+    });
+    document.addEventListener('click', e => { if (!dd.contains(e.target)) setDd(false); });
+  }
+  const mddBtn = document.getElementById('mobile-dd-toggle');
+  if (mddBtn) {
+    const mddList = document.getElementById('mobile-dd-list');
+    mddBtn.addEventListener('click', () => {
+      const open = mddBtn.getAttribute('aria-expanded') !== 'true';
+      mddBtn.setAttribute('aria-expanded', open);
+      mddList.hidden = !open;
+    });
+  }
+
+  // ── GOOGLE REVIEWS (widget; the review list is at the top of this script) ──
+  (function () {
+    const track = document.getElementById('rv-track');
+    if (!track) return;
+    const avg = REVIEWS.reduce((t, r) => t + r.rating, 0) / REVIEWS.length;
+    document.getElementById('rv-rated').textContent = 'Rated ' + avg.toFixed(1) + ' on Google';
+
+    REVIEWS.forEach(r => {
+      const card = document.createElement('article');
+      card.className = 'rv-card';
+      const head = document.createElement('div');
+      head.className = 'rv-head';
+      const av = document.createElement('div');
+      av.className = 'rv-avatar';
+      av.setAttribute('aria-hidden', 'true');
+      av.textContent = r.name.charAt(0).toUpperCase();
+      const who = document.createElement('div');
+      const nm = document.createElement('div');
+      nm.className = 'rv-name';
+      nm.textContent = r.name;
+      const src = document.createElement('div');
+      src.className = 'rv-source';
+      src.textContent = 'Google review';
+      who.append(nm, src);
+      head.append(av, who);
+      const stars = document.createElement('div');
+      stars.className = 'rv-stars';
+      stars.setAttribute('role', 'img');
+      stars.setAttribute('aria-label', r.rating + ' out of 5 stars');
+      stars.textContent = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+      const text = document.createElement('p');
+      text.className = 'rv-text';
+      text.textContent = '\u201C' + r.text + '\u201D';
+      const more = document.createElement('button');
+      more.type = 'button';
+      more.className = 'rv-more';
+      more.textContent = 'Read more';
+      more.hidden = true;
+      more.setAttribute('aria-expanded', 'false');
+      more.addEventListener('click', () => {
+        const open = card.classList.toggle('expanded');
+        more.textContent = open ? 'Read less' : 'Read more';
+        more.setAttribute('aria-expanded', open);
+      });
+      card.append(head, stars, text, more);
+      track.appendChild(card);
+    });
+
+    // Only show "Read more" on cards whose text is actually clamped.
+    const checkClamp = () => {
+      track.querySelectorAll('.rv-card').forEach(card => {
+        if (card.classList.contains('expanded')) return;
+        const t = card.querySelector('.rv-text');
+        card.querySelector('.rv-more').hidden = t.scrollHeight <= t.clientHeight + 1;
+      });
+    };
+    checkClamp();
+    window.addEventListener('resize', checkClamp);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(checkClamp);
+
+    const prev = document.getElementById('rv-prev');
+    const next = document.getElementById('rv-next');
+    const step = () => { const c = track.querySelector('.rv-card'); return c.offsetWidth + 16; };
+    const sync = () => {
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    };
+    prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+    next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+    track.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+    sync();
+  })();
 
   // ── MOBILE MENU ──
   const burger = document.getElementById('nav-burger');
@@ -2035,5 +2264,6 @@
     });
   });
 </script>
+<script src="/quote-launcher.js" defer></script>
 </body>
 </html>
