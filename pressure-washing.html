@@ -414,6 +414,13 @@
     }
     .footer-areas-list a:hover { color: var(--white); }
 
+    /* ── INLINE LINKS IN COPY ── */
+    .body-text a, .surface-list a, .sealer-body a {
+      color: var(--concrete); text-decoration: none;
+      border-bottom: 1px solid var(--border); transition: color 0.2s, border-color 0.2s;
+    }
+    .body-text a:hover, .surface-list a:hover, .sealer-body a:hover { color: var(--white); border-color: var(--ash); }
+
     /* ── MOBILE ── */
     @media (max-width: 768px) {
       nav { height: 56px; }
@@ -530,19 +537,19 @@
       <div class="reveal">
         <p class="body-text">Anywhere concrete or paving takes a beating from weather, traffic, or moisture.</p>
         <ul class="surface-list">
-          <li>Driveways &amp; carparks</li>
-          <li>Paths &amp; walkways</li>
-          <li>Pool surrounds</li>
+          <li><a href="/driveway-cleaning">Driveways</a> &amp; carparks</li>
+          <li><a href="/pool-surround-and-path-cleaning">Paths &amp; walkways</a></li>
+          <li><a href="/pool-surround-and-path-cleaning">Pool surrounds</a></li>
           <li>Alfresco &amp; patio areas</li>
         </ul>
       </div>
       <div class="reveal reveal-d1">
         <p class="body-text">&nbsp;</p>
         <ul class="surface-list">
-          <li>Commercial surfaces &amp; carparks</li>
+          <li><a href="/commercial-pressure-washing">Commercial surfaces &amp; carparks</a></li>
           <li>Fencing &amp; retaining walls</li>
           <li>Body corporate common areas</li>
-          <li>Pre-sale &amp; pre-sealing prep</li>
+          <li>Pre-sale &amp; <a href="/concrete-sealing">pre-sealing</a> prep</li>
         </ul>
       </div>
     </div>

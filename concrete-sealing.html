@@ -425,6 +425,13 @@
     }
     .footer-areas-list a:hover { color: var(--white); }
 
+    /* ── INLINE LINKS IN COPY ── */
+    .body-text a, .surface-list a, .sealer-body a {
+      color: var(--concrete); text-decoration: none;
+      border-bottom: 1px solid var(--border); transition: color 0.2s, border-color 0.2s;
+    }
+    .body-text a:hover, .surface-list a:hover, .sealer-body a:hover { color: var(--white); border-color: var(--ash); }
+
     /* ── MOBILE ── */
     @media (max-width: 768px) {
       nav { height: 56px; }
@@ -545,7 +552,7 @@
       </div>
       <div class="sealer-card reveal reveal-d1">
         <div class="sealer-name">Colour Enhancement</div>
-        <p class="sealer-body">Deepens and enriches the existing colour and tone — popular on exposed aggregate and coloured concrete where you want the surface to look richer, not just protected.</p>
+        <p class="sealer-body">Deepens and enriches the existing colour and tone — popular on exposed aggregate and coloured concrete where you want the surface to look richer, not just protected. See <a href="/exposed-aggregate-sealing">exposed aggregate sealing</a>.</p>
       </div>
       <div class="sealer-card reveal reveal-d2">
         <div class="sealer-name">Anti-Slip Coatings</div>
