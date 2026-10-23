@@ -33,6 +33,8 @@
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
   <link rel="canonical" href="https://cgbindustries.com.au/" />
+  <link rel="preload" as="image" href="/img2/hero-pressure-washed-driveway-mobile-828w.webp" type="image/webp" media="(max-width: 768px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="/img2/hero-pressure-washed-driveway-sunshine-coast-opt.webp" type="image/webp" media="(min-width: 769px)" fetchpriority="high" />
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -369,8 +371,18 @@
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--concrete);
-      margin-bottom: 32px;
+      margin-bottom: 10px;
       margin-top: 14px;
+    }
+
+    .hero-h1 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ash);
+      margin-bottom: 32px;
     }
 
     .hero-body {
@@ -399,6 +411,7 @@
 
     .hero-stamp    { opacity: 0; animation: stampIn 0.7s cubic-bezier(0.16,1,0.3,1) 0.05s forwards; }
     .hero-stamp-sub { opacity: 0; animation: stampIn 0.6s cubic-bezier(0.16,1,0.3,1) 0.22s forwards; }
+    .hero-h1       { opacity: 0; animation: stampIn 0.6s cubic-bezier(0.16,1,0.3,1) 0.3s forwards; }
     .hero-body     { opacity: 0; animation: stampIn 0.5s cubic-bezier(0.16,1,0.3,1) 0.38s forwards; }
     .hero-actions  { opacity: 0; animation: stampIn 0.5s cubic-bezier(0.16,1,0.3,1) 0.48s forwards; }
 
@@ -1303,6 +1316,7 @@
       .hero-content { padding: 0 24px; }
       .hero-stamp { font-size: clamp(4rem, 19vw, 6.5rem); white-space: normal; }
       .hero-stamp-sub { font-size: 1rem; }
+      .hero-h1 { font-size: 0.72rem; letter-spacing: 0.12em; }
       .hero-body { font-size: 0.88rem; max-width: 100%; }
       .hero-bg-img img { object-position: center; }
       .hero-actions { flex-direction: column; align-items: stretch; width: 100%; }
@@ -1350,6 +1364,7 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition: none !important; }
       .marquee-inner { animation: none; }
+      .hero-stamp, .hero-stamp-sub, .hero-h1, .hero-body, .hero-actions { opacity: 1; }
     }
   </style>
 </head>
@@ -1361,7 +1376,7 @@
 <nav aria-label="Main navigation">
   <div class="nav-inner">
     <div class="nav-logo">
-      <img src="/logo1.png" alt="CGB Industries" />
+      <a href="/"><img src="/logo1.png" alt="CGB Industries" width="461" height="200" /></a>
     </div>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
@@ -1390,8 +1405,8 @@
 <section id="hero" aria-label="Hero">
   <div class="hero-bg-img">
     <picture>
-      <source media="(max-width: 768px)" srcset="/img2/hero-pressure-washed-driveway-mobile.webp" width="1080" height="1920" fetchpriority="high" />
-      <img src="/img2/hero-pressure-washed-driveway-sunshine-coast.webp" width="1920" height="1080" fetchpriority="high" alt="Pressure washed exposed aggregate driveway in Buderim, Sunshine Coast" />
+      <source media="(max-width: 768px)" srcset="/img2/hero-pressure-washed-driveway-mobile-828w.webp" />
+      <img src="/img2/hero-pressure-washed-driveway-sunshine-coast-opt.webp" width="1920" height="1080" fetchpriority="high" decoding="async" alt="Pressure washed exposed aggregate driveway in Buderim, Sunshine Coast" />
     </picture>
   </div>
   <div class="hero-overlay" aria-hidden="true"></div>
@@ -1399,6 +1414,7 @@
   <div class="hero-content">
     <div class="hero-stamp" aria-hidden="true">Clean.</div>
     <div class="hero-stamp-sub">Concrete · Restoration · Protection</div>
+    <h1 class="hero-h1">Pressure Washing &amp; Concrete Sealing on the Sunshine Coast</h1>
     <p class="hero-body">Pressure washing, sealing, and concrete repair on the Sunshine Coast. Owner-operated — the person who quotes your job is the person who does it.</p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">
