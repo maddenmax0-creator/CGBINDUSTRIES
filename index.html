@@ -1482,6 +1482,49 @@
       .marquee-inner { animation: none; }
       .hero-stamp, .hero-stamp-sub, .hero-h1, .hero-body, .hero-actions { opacity: 1; }
     }
+
+    /* ── SERVICES DROPDOWN ── */
+    .nav-dd { position: relative; }
+    .nav-dd-toggle {
+      background: none; border: none; cursor: pointer; padding: 0;
+      font: inherit; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+      display: inline-flex; align-items: center; gap: 7px; transition: color 0.2s;
+    }
+    .nav-dd-toggle:hover, .nav-dd.open .nav-dd-toggle, .nav-dd-toggle:focus-visible { color: var(--white); }
+    .nav-dd-toggle svg { width: 9px; height: 9px; transition: transform 0.2s; }
+    .nav-dd.open .nav-dd-toggle svg { transform: rotate(180deg); }
+    .nav-dd-menu {
+      display: none; position: absolute; top: 100%; left: -20px; min-width: 290px;
+      padding-top: 18px; list-style: none; z-index: var(--z-nav);
+    }
+    .nav-dd-menu-inner {
+      background: rgba(8,8,8,0.98); border: 1px solid var(--border); padding: 8px 0;
+      list-style: none;
+    }
+    .nav-dd.open .nav-dd-menu { display: block; }
+    @media (hover: hover) {
+      .nav-dd:hover .nav-dd-menu { display: block; }
+      .nav-dd:hover .nav-dd-toggle { color: var(--white); }
+      .nav-dd:hover .nav-dd-toggle svg { transform: rotate(180deg); }
+    }
+    .nav-dd-menu a { display: block; padding: 11px 20px; letter-spacing: 0.14em; white-space: nowrap; }
+    .nav-dd-menu a:hover, .nav-dd-menu a:focus-visible { background: rgba(255,255,255,0.05); color: var(--white); }
+    .nav-dd-menu .nav-dd-all { border-top: 1px solid var(--border); margin-top: 6px; padding-top: 6px; }
+
+    .mobile-dd-toggle {
+      display: flex; justify-content: space-between; align-items: center; width: 100%;
+      padding: 14px 24px; background: none; border: none; border-bottom: 1px solid var(--border);
+      cursor: pointer; text-align: left;
+      font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 1rem;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--ash);
+    }
+    .mobile-dd-toggle:hover, .mobile-dd-toggle[aria-expanded="true"] { color: var(--white); }
+    .mobile-dd-toggle svg { width: 12px; height: 12px; transition: transform 0.2s; }
+    .mobile-dd-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+    .mobile-menu { max-height: calc(100vh - 56px); overflow-y: auto; }
+    .mobile-dd-list[hidden] { display: none; }
+    .mobile-menu .mobile-dd-list a { padding-left: 40px; font-size: 0.88rem; color: var(--muted); }
   </style>
 </head>
 <body>
@@ -1495,7 +1538,18 @@
       <a href="/"><img src="/logo1.png" alt="CGB Industries" width="461" height="200" /></a>
     </div>
     <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
+      <li class="nav-dd">
+        <button type="button" class="nav-dd-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="nav-dd-menu">Services <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dd-menu" id="nav-dd-menu"><ul class="nav-dd-menu-inner">
+          <li><a href="/pressure-washing">Pressure Washing</a></li>
+          <li><a href="/driveway-cleaning">Driveway Cleaning</a></li>
+          <li><a href="/concrete-sealing">Concrete Sealing</a></li>
+          <li><a href="/exposed-aggregate-sealing">Exposed Aggregate Sealing</a></li>
+          <li><a href="/pool-surround-and-path-cleaning">Pool Surround &amp; Path Cleaning</a></li>
+          <li><a href="/commercial-pressure-washing">Commercial Pressure Washing</a></li>
+          <li class="nav-dd-all"><a href="/service-areas">Service Areas</a></li>
+        </ul></div>
+      </li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#why">About</a></li>
       <li><a href="#testimonials">Reviews</a></li>
@@ -1508,7 +1562,16 @@
 </nav>
 
 <div class="mobile-menu" id="mobile-menu">
-  <a href="#services">Services</a>
+  <button type="button" class="mobile-dd-toggle" id="mobile-dd-toggle" aria-expanded="false" aria-controls="mobile-dd-list">Services <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="mobile-dd-list" id="mobile-dd-list" hidden>
+    <a href="/pressure-washing">Pressure Washing</a>
+    <a href="/driveway-cleaning">Driveway Cleaning</a>
+    <a href="/concrete-sealing">Concrete Sealing</a>
+    <a href="/exposed-aggregate-sealing">Exposed Aggregate Sealing</a>
+    <a href="/pool-surround-and-path-cleaning">Pool Surround &amp; Path Cleaning</a>
+    <a href="/commercial-pressure-washing">Commercial Pressure Washing</a>
+    <a href="/service-areas">Service Areas</a>
+  </div>
   <a href="#gallery">Gallery</a>
   <a href="#why">About</a>
   <a href="#testimonials">Reviews</a>
@@ -1962,6 +2025,28 @@
   }, { threshold: 0.12 });
 
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  // ── SERVICES DROPDOWN ──
+  const dd = document.querySelector('.nav-dd');
+  if (dd) {
+    const ddBtn = dd.querySelector('.nav-dd-toggle');
+    const setDd = open => { dd.classList.toggle('open', open); ddBtn.setAttribute('aria-expanded', open); };
+    ddBtn.addEventListener('click', () => setDd(!dd.classList.contains('open')));
+    dd.addEventListener('focusout', e => { if (!dd.contains(e.relatedTarget)) setDd(false); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && dd.classList.contains('open')) { setDd(false); ddBtn.focus(); }
+    });
+    document.addEventListener('click', e => { if (!dd.contains(e.target)) setDd(false); });
+  }
+  const mddBtn = document.getElementById('mobile-dd-toggle');
+  if (mddBtn) {
+    const mddList = document.getElementById('mobile-dd-list');
+    mddBtn.addEventListener('click', () => {
+      const open = mddBtn.getAttribute('aria-expanded') !== 'true';
+      mddBtn.setAttribute('aria-expanded', open);
+      mddList.hidden = !open;
+    });
+  }
 
   // ── MOBILE MENU ──
   const burger = document.getElementById('nav-burger');
