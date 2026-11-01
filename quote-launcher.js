@@ -1,4 +1,4 @@
-/* Enquire button: fixed bottom-right, expands upward into a contact menu (call, text, email, Messenger, quote).
+/* Enquire button: fixed bottom-right, expands upward into a contact menu (call, text, email, quote).
    Never opens on its own. Hidden while the enquiry form is on screen, and on desktop until the visitor scrolls
    past the hero (the nav already has a quote button there). Also owns the one-off teaser card and the desktop
    exit-intent popup. Styles live in /ui.css, the popup engine in /ui.js. First-party, no dependencies. */
@@ -7,9 +7,6 @@
   var PHONE_DISPLAY = '0414 438 169';
   var PHONE_RAW = '0414438169';
   var EMAIL = 'cgbindustries@outlook.com.au';
-  // TODO(owner): confirm the Messenger link. m.me/<page-name> is built from the Facebook page
-  // (facebook.com/cgbindustries) and only works if Messenger is switched on for that page.
-  var MESSENGER_URL = 'https://m.me/cgbindustries';
 
   var ICON = {
     chat:  '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 4.5A1.5 1.5 0 0 1 4.5 3h11A1.5 1.5 0 0 1 17 4.5v7a1.5 1.5 0 0 1-1.5 1.5H9l-4 3.5V13h-.5A1.5 1.5 0 0 1 3 11.5v-7Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>',
@@ -17,7 +14,6 @@
     call:  '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 3h2.3l1.2 3.4-1.6 1.1a8.6 8.6 0 0 0 4.4 4.4l1.1-1.6 3.4 1.2v2.3A1.8 1.8 0 0 1 14.2 15 11.2 11.2 0 0 1 5 5.8 1.8 1.8 0 0 1 5.2 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
     sms:   '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5.5A1.5 1.5 0 0 1 4.5 4h11A1.5 1.5 0 0 1 17 5.5v6a1.5 1.5 0 0 1-1.5 1.5H8.5L5 16v-3h-.5A1.5 1.5 0 0 1 3 11.5v-6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 8h6M7 10.5h3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>',
     email: '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="4.5" width="14" height="11" rx="1.8" stroke="currentColor" stroke-width="1.5"/><path d="m3.8 5.8 6.2 4.7 6.2-4.7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    msgr:  '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2.8c-4 0-7 2.9-7 6.7 0 2 .9 3.8 2.3 5v2.4l2.3-1.3c.8.2 1.5.3 2.4.3 4 0 7-2.9 7-6.7S14 2.8 10 2.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="m6.2 11.4 2.7-3 1.8 1.7 2.8-2.2-2.6 3.1-1.9-1.7-2.8 2.1Z" fill="currentColor"/></svg>',
     quote: '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 2.8h6.2L15 6.6v9.6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V3.8a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 2.8v4h4M6.8 10.2h6.4M6.8 13h4.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>'
   };
 
@@ -44,7 +40,6 @@
     opt('tel:' + PHONE_RAW, ICON.call, 'Call ' + PHONE_DISPLAY),
     opt('sms:' + PHONE_RAW, ICON.sms, 'Text us'),
     opt('mailto:' + EMAIL, ICON.email, 'Email us'),
-    opt(MESSENGER_URL, ICON.msgr, 'Messenger', { attrs: 'target="_blank" rel="noopener noreferrer"' }),
     opt(quoteHref, ICON.quote, 'Get a free quote', { primary: true, attrs: 'data-ql-quote' })
   ];
   root.innerHTML =
