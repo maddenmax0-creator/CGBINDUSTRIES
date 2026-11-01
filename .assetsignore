@@ -11,3 +11,8 @@ doc
 package.json
 package-lock.json
 node_modules
+wrangler.jsonc
+.github
+README*
+.claude
+.env*
