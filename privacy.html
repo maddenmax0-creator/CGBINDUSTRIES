@@ -50,13 +50,13 @@
 
     /* ── NAV ── */
     .nav-back {
-      display: inline-flex; align-items: center; gap: 8px;
+      display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px;
       text-decoration: none;
       font-family: 'Oswald', sans-serif; font-weight: 400;
       font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase;
       color: var(--ash); transition: color 0.2s;
     }
-    .nav-back:hover { color: var(--white); }
+    .nav-back:hover { color: var(--white); background: var(--ui-hover); }
 
     /* ── CONTENT ── */
     main {
@@ -114,7 +114,6 @@
 
 
     @media (max-width: 768px) {
-      .nav-inner { padding: 0 20px; }
       main { padding: 120px 20px 72px; }
     }
 
