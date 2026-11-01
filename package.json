@@ -1,0 +1,8 @@
+{
+  "name": "cgb-industries-site",
+  "private": true,
+  "description": "Static site for CGB Industries, served by Cloudflare Workers static assets.",
+  "devDependencies": {
+    "wrangler": "^4.156.0"
+  }
+}
