@@ -317,3 +317,14 @@ html.ui-locked { overflow: hidden; scrollbar-gutter: stable; }   /* no scrollbar
   .ql-ico svg { transition: opacity .15s linear !important; transform: none !important; }
   .ql-btn.ql-pulse { animation: none; }
 }
+
+/* ═════════ BEFORE/AFTER CAPTIONS (visible caption under each slider) ═════════ */
+.ba-fig { margin: 0; display: flex; flex-direction: column; min-width: 0; }
+.ba-fig + .photo-grid { margin-top: 16px; }
+.ba-cap {
+  display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px 16px;
+  padding: 12px 2px 20px; font-size: .8rem; font-weight: 300; line-height: 1.5; color: var(--ui-text-2);
+}
+.ba-cap a { color: var(--ui-accent); text-decoration: none; border-bottom: 1px solid var(--ui-line); transition: color .2s, border-color .2s; }
+.ba-cap a:hover, .ba-cap a:focus-visible { color: var(--ui-text); border-color: var(--ui-text-2); }
+.ba-cap-link { font-family: 'Oswald', sans-serif; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; }
