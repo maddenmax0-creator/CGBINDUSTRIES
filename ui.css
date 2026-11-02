@@ -328,3 +328,23 @@ html.ui-locked { overflow: hidden; scrollbar-gutter: stable; }   /* no scrollbar
 .ba-cap a { color: var(--ui-accent); text-decoration: none; border-bottom: 1px solid var(--ui-line); transition: color .2s, border-color .2s; }
 .ba-cap a:hover, .ba-cap a:focus-visible { color: var(--ui-text); border-color: var(--ui-text-2); }
 .ba-cap-link { font-family: 'Oswald', sans-serif; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; }
+.ba-fig > img { display: block; width: 100%; height: auto; background: var(--ui-surface-2); }
+
+/* ═════════ AREAS WE SERVICE (home page) ═════════ */
+#areas { background: var(--ui-ink); padding: 96px 52px; border-top: 1px solid var(--ui-line); }
+.areas-inner { max-width: 1360px; margin: 0 auto; }
+.areas-head { max-width: 640px; margin-bottom: 40px; }
+.areas-intro { margin-top: 20px; font-size: .95rem; font-weight: 300; line-height: 1.78; color: var(--ui-text-2); text-wrap: pretty; }
+.areas-intro a { color: var(--ui-accent); text-decoration: none; border-bottom: 1px solid var(--ui-line); transition: color .2s, border-color .2s; }
+.areas-intro a:hover { color: var(--ui-text); border-color: var(--ui-text-2); }
+.areas-grid { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin: 0; padding: 0; }
+.areas-grid a {
+  display: flex; flex-direction: column; gap: 8px; height: 100%; padding: 28px 28px 26px;
+  background: var(--ui-surface-2); text-decoration: none; transition: background .2s;
+}
+.areas-grid a:hover, .areas-grid a:focus-visible { background: var(--ui-hover); }
+.areas-name { font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 1.5rem; letter-spacing: .03em; text-transform: uppercase; color: var(--ui-text); line-height: 1.1; }
+.areas-note { font-size: .84rem; font-weight: 300; line-height: 1.55; color: var(--ui-text-2); }
+@media (max-width: 900px) { .areas-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { #areas { padding: 64px 24px; } .areas-grid a { padding: 22px 20px; } .areas-name { font-size: 1.25rem; } }
+@media (max-width: 480px) { .areas-grid { grid-template-columns: 1fr; } }
