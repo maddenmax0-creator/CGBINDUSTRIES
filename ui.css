@@ -328,7 +328,7 @@ html.ui-locked { overflow: hidden; scrollbar-gutter: stable; }   /* no scrollbar
 .ba-cap a { color: var(--ui-accent); text-decoration: none; border-bottom: 1px solid var(--ui-line); transition: color .2s, border-color .2s; }
 .ba-cap a:hover, .ba-cap a:focus-visible { color: var(--ui-text); border-color: var(--ui-text-2); }
 .ba-cap-link { font-family: 'Oswald', sans-serif; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; }
-.ba-fig > img { display: block; width: 100%; height: auto; background: var(--ui-surface-2); }
+.ba-fig > img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; background: var(--ui-surface-2); }
 
 /* ═════════ AREAS WE SERVICE (home page) ═════════ */
 #areas { background: var(--ui-ink); padding: 96px 52px; border-top: 1px solid var(--ui-line); }

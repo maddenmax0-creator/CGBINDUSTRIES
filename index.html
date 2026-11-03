@@ -823,9 +823,8 @@
       font-family: 'Oswald', sans-serif; font-weight: 400; font-size: clamp(1.8rem, 3vw, 2.6rem);
       line-height: 1; letter-spacing: 0.02em; text-transform: uppercase; color: var(--white);
     }
-    .photo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px; }
-    .photo { position: relative; display: block; aspect-ratio: 4 / 5; overflow: hidden; background: var(--card); cursor: zoom-in; }
-    .photo:first-child { grid-column: 1 / -1; aspect-ratio: 4 / 3; }
+    .photo-grid { display: grid; grid-template-columns: 1fr; gap: 3px; }
+    .photo { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; background: var(--card); cursor: zoom-in; }
     .photo img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(.22,1,.36,1); }
     .photo::after {
       content: ''; position: absolute; right: 12px; bottom: 12px; width: 36px; height: 36px; border-radius: 50%;
@@ -838,9 +837,8 @@
       .photo:hover img { transform: scale(1.04); }
       .photo:hover::after { opacity: 1; transform: none; }
     }
-    @media (min-width: 700px) {
+    @media (min-width: 520px) {
       .photo-grid { grid-template-columns: repeat(3, 1fr); }
-      .photo:first-child { grid-column: auto; aspect-ratio: 4 / 5; }
     }
 
     .ui-lightbox { padding: 0; background: var(--lightbox-bg); }
@@ -1724,31 +1722,31 @@
     </div>
     <div class="photo-grid" id="photo-grid" aria-label="Job photos. Select a photo to enlarge.">
         <a href="/img2/driveway-pressure-washing-in-progress-sunshine-coast.webp" class="photo" data-caption="Pressure washing a driveway, Sunshine Coast" data-w="1200" data-h="900">
-          <img src="/img2/g/driveway-pressure-washing-in-progress-sunshine-coast-480.webp" srcset="/img2/g/driveway-pressure-washing-in-progress-sunshine-coast-480.webp 480w, /img2/g/driveway-pressure-washing-in-progress-sunshine-coast-800.webp 800w, /img2/driveway-pressure-washing-in-progress-sunshine-coast.webp 1200w" sizes="(min-width: 700px) 33vw, 50vw" width="480" height="360" loading="lazy" decoding="async" alt="Driveway pressure washing in progress on the Sunshine Coast, cleaned section next to dirty concrete" />
+          <img src="/img2/g/driveway-pressure-washing-in-progress-sunshine-coast-480.webp" srcset="/img2/g/driveway-pressure-washing-in-progress-sunshine-coast-480.webp 480w, /img2/g/driveway-pressure-washing-in-progress-sunshine-coast-800.webp 800w, /img2/driveway-pressure-washing-in-progress-sunshine-coast.webp 1200w" sizes="(min-width: 520px) 33vw, 100vw" width="480" height="360" loading="lazy" decoding="async" alt="Driveway pressure washing in progress on the Sunshine Coast, cleaned section next to dirty concrete" />
         </a>
         <a href="/img2/exposed-aggregate-driveway-half-cleaned-sunshine-coast.webp" class="photo" data-caption="Exposed aggregate driveway, half cleaned, Sunshine Coast" data-w="797" data-h="1024">
-          <img src="/img2/g/exposed-aggregate-driveway-half-cleaned-sunshine-coast-480.webp" srcset="/img2/g/exposed-aggregate-driveway-half-cleaned-sunshine-coast-480.webp 480w, /img2/exposed-aggregate-driveway-half-cleaned-sunshine-coast.webp 797w" sizes="(min-width: 700px) 33vw, 50vw" width="480" height="617" loading="lazy" decoding="async" alt="Exposed aggregate driveway half pressure washed, clean stripe beside dirty concrete, Sunshine Coast" />
+          <img src="/img2/g/exposed-aggregate-driveway-half-cleaned-sunshine-coast-480.webp" srcset="/img2/g/exposed-aggregate-driveway-half-cleaned-sunshine-coast-480.webp 480w, /img2/exposed-aggregate-driveway-half-cleaned-sunshine-coast.webp 797w" sizes="(min-width: 520px) 33vw, 100vw" width="480" height="617" loading="lazy" decoding="async" alt="Exposed aggregate driveway half pressure washed, clean stripe beside dirty concrete, Sunshine Coast" />
         </a>
         <a href="/img2/exposed-aggregate-driveway-sunshine-coast.webp" class="photo" data-caption="Exposed aggregate driveway after cleaning, Sunshine Coast" data-w="900" data-h="1200">
-          <img src="/img2/g/exposed-aggregate-driveway-sunshine-coast-480.webp" srcset="/img2/g/exposed-aggregate-driveway-sunshine-coast-480.webp 480w, /img2/g/exposed-aggregate-driveway-sunshine-coast-800.webp 800w, /img2/exposed-aggregate-driveway-sunshine-coast.webp 900w" sizes="(min-width: 700px) 33vw, 50vw" width="480" height="640" loading="lazy" decoding="async" alt="Exposed aggregate driveway after cleaning in a bushland setting, Sunshine Coast" />
+          <img src="/img2/g/exposed-aggregate-driveway-sunshine-coast-480.webp" style="object-position:50% 72%" srcset="/img2/g/exposed-aggregate-driveway-sunshine-coast-480.webp 480w, /img2/g/exposed-aggregate-driveway-sunshine-coast-800.webp 800w, /img2/exposed-aggregate-driveway-sunshine-coast.webp 900w" sizes="(min-width: 520px) 33vw, 100vw" width="480" height="640" loading="lazy" decoding="async" alt="Exposed aggregate driveway after cleaning in a bushland setting, Sunshine Coast" />
         </a>
         <a href="/img2/exposed-aggregate-path-front-yard-sunshine-coast.webp" class="photo" data-caption="Exposed aggregate front path after cleaning, Sunshine Coast" data-w="900" data-h="1200">
-          <img src="/img2/g/exposed-aggregate-path-front-yard-sunshine-coast-480.webp" srcset="/img2/g/exposed-aggregate-path-front-yard-sunshine-coast-480.webp 480w, /img2/g/exposed-aggregate-path-front-yard-sunshine-coast-800.webp 800w, /img2/exposed-aggregate-path-front-yard-sunshine-coast.webp 900w" sizes="(min-width: 700px) 33vw, 50vw" width="480" height="640" loading="lazy" decoding="async" alt="Clean exposed aggregate path through a front yard, Sunshine Coast" />
+          <img src="/img2/g/exposed-aggregate-path-front-yard-sunshine-coast-480.webp" style="object-position:50% 55%" srcset="/img2/g/exposed-aggregate-path-front-yard-sunshine-coast-480.webp 480w, /img2/g/exposed-aggregate-path-front-yard-sunshine-coast-800.webp 800w, /img2/exposed-aggregate-path-front-yard-sunshine-coast.webp 900w" sizes="(min-width: 520px) 33vw, 100vw" width="480" height="640" loading="lazy" decoding="async" alt="Clean exposed aggregate path through a front yard, Sunshine Coast" />
         </a>
         <a href="/img2/exposed-aggregate-side-path-sunshine-coast.webp" class="photo" data-caption="Exposed aggregate side path after pressure washing, Sunshine Coast" data-w="900" data-h="1200">
-          <img src="/img2/g/exposed-aggregate-side-path-sunshine-coast-480.webp" srcset="/img2/g/exposed-aggregate-side-path-sunshine-coast-480.webp 480w, /img2/g/exposed-aggregate-side-path-sunshine-coast-800.webp 800w, /img2/exposed-aggregate-side-path-sunshine-coast.webp 900w" sizes="(min-width: 700px) 33vw, 50vw" width="480" height="640" loading="lazy" decoding="async" alt="Narrow exposed aggregate side path beside a house after pressure washing, Sunshine Coast" />
+          <img src="/img2/g/exposed-aggregate-side-path-sunshine-coast-480.webp" style="object-position:50% 72%" srcset="/img2/g/exposed-aggregate-side-path-sunshine-coast-480.webp 480w, /img2/g/exposed-aggregate-side-path-sunshine-coast-800.webp 800w, /img2/exposed-aggregate-side-path-sunshine-coast.webp 900w" sizes="(min-width: 520px) 33vw, 100vw" width="480" height="640" loading="lazy" decoding="async" alt="Narrow exposed aggregate side path beside a house after pressure washing, Sunshine Coast" />
         </a>
         <a href="/img2/paver-path-after-pressure-washing-sunshine-coast.webp" class="photo" data-caption="Paver path after pressure washing, Sunshine Coast" data-w="1200" data-h="900">
-          <img src="/img2/g/paver-path-after-pressure-washing-sunshine-coast-480.webp" srcset="/img2/g/paver-path-after-pressure-washing-sunshine-coast-480.webp 480w, /img2/g/paver-path-after-pressure-washing-sunshine-coast-800.webp 800w, /img2/paver-path-after-pressure-washing-sunshine-coast.webp 1200w" sizes="(min-width: 700px) 33vw, 50vw" width="480" height="360" loading="lazy" decoding="async" alt="Paver path with handrail after pressure washing, Sunshine Coast" />
+          <img src="/img2/g/paver-path-after-pressure-washing-sunshine-coast-480.webp" srcset="/img2/g/paver-path-after-pressure-washing-sunshine-coast-480.webp 480w, /img2/g/paver-path-after-pressure-washing-sunshine-coast-800.webp 800w, /img2/paver-path-after-pressure-washing-sunshine-coast.webp 1200w" sizes="(min-width: 520px) 33vw, 100vw" width="480" height="360" loading="lazy" decoding="async" alt="Paver path with handrail after pressure washing, Sunshine Coast" />
         </a>
         <a href="/img2/paver-path-stained-before-pressure-washing.webp" class="photo" data-caption="Stained paver path before pressure washing, Sunshine Coast" data-w="900" data-h="1200">
-          <img src="/img2/g/paver-path-stained-before-pressure-washing-480.webp" srcset="/img2/g/paver-path-stained-before-pressure-washing-480.webp 480w, /img2/g/paver-path-stained-before-pressure-washing-800.webp 800w, /img2/paver-path-stained-before-pressure-washing.webp 900w" sizes="(min-width: 700px) 33vw, 50vw" width="480" height="640" loading="lazy" decoding="async" alt="Stained paver path before pressure washing, Sunshine Coast" />
+          <img src="/img2/g/paver-path-stained-before-pressure-washing-480.webp" style="object-position:50% 82%" srcset="/img2/g/paver-path-stained-before-pressure-washing-480.webp 480w, /img2/g/paver-path-stained-before-pressure-washing-800.webp 800w, /img2/paver-path-stained-before-pressure-washing.webp 900w" sizes="(min-width: 520px) 33vw, 100vw" width="480" height="640" loading="lazy" decoding="async" alt="Stained paver path before pressure washing, Sunshine Coast" />
         </a>
         <a href="/img2/paving-path-mould-algae-before-pressure-washing.webp" class="photo" data-caption="Paving path with mould and algae, before pressure washing, Sunshine Coast" data-w="900" data-h="1200">
-          <img src="/img2/g/paving-path-mould-algae-before-pressure-washing-480.webp" srcset="/img2/g/paving-path-mould-algae-before-pressure-washing-480.webp 480w, /img2/g/paving-path-mould-algae-before-pressure-washing-800.webp 800w, /img2/paving-path-mould-algae-before-pressure-washing.webp 900w" sizes="(min-width: 700px) 33vw, 50vw" width="480" height="640" loading="lazy" decoding="async" alt="Paving path covered in mould and algae before pressure washing, Sunshine Coast" />
+          <img src="/img2/g/paving-path-mould-algae-before-pressure-washing-480.webp" style="object-position:50% 82%" srcset="/img2/g/paving-path-mould-algae-before-pressure-washing-480.webp 480w, /img2/g/paving-path-mould-algae-before-pressure-washing-800.webp 800w, /img2/paving-path-mould-algae-before-pressure-washing.webp 900w" sizes="(min-width: 520px) 33vw, 100vw" width="480" height="640" loading="lazy" decoding="async" alt="Paving path covered in mould and algae before pressure washing, Sunshine Coast" />
         </a>
         <a href="/img2/rotary-surface-cleaner-paving-path-sunshine-coast.webp" class="photo" data-caption="Rotary surface cleaner on a paving path, Sunshine Coast" data-w="900" data-h="1200">
-          <img src="/img2/g/rotary-surface-cleaner-paving-path-sunshine-coast-480.webp" srcset="/img2/g/rotary-surface-cleaner-paving-path-sunshine-coast-480.webp 480w, /img2/g/rotary-surface-cleaner-paving-path-sunshine-coast-800.webp 800w, /img2/rotary-surface-cleaner-paving-path-sunshine-coast.webp 900w" sizes="(min-width: 700px) 33vw, 50vw" width="480" height="640" loading="lazy" decoding="async" alt="Rotary surface cleaner cleaning a paving path, Sunshine Coast" />
+          <img src="/img2/g/rotary-surface-cleaner-paving-path-sunshine-coast-480.webp" style="object-position:50% 78%" srcset="/img2/g/rotary-surface-cleaner-paving-path-sunshine-coast-480.webp 480w, /img2/g/rotary-surface-cleaner-paving-path-sunshine-coast-800.webp 800w, /img2/rotary-surface-cleaner-paving-path-sunshine-coast.webp 900w" sizes="(min-width: 520px) 33vw, 100vw" width="480" height="640" loading="lazy" decoding="async" alt="Rotary surface cleaner cleaning a paving path, Sunshine Coast" />
         </a>
     </div>
     <p class="services-more reveal">Related services: <a href="/driveway-cleaning">driveway cleaning</a>, <a href="/exposed-aggregate-sealing">exposed aggregate sealing</a>, <a href="/pool-surround-and-path-cleaning">paver and path cleaning</a>, <a href="/stair-and-retaining-wall-cleaning">stair and retaining wall cleaning</a> and <a href="/concrete-sealing">concrete sealing</a>.</p>
