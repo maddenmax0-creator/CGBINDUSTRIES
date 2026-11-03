@@ -1,3 +1,7 @@
 .DS_Store
 **/.DS_Store
 node_modules
+
+# Knowledge base and AI notes: never commit or publish
+CGB*Knowledge*Base*.md
+CLAUDE.md
