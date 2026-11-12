@@ -352,3 +352,6 @@ html.ui-locked { overflow: hidden; scrollbar-gutter: stable; }   /* no scrollbar
 .areas-more { margin: 24px 0 0; font-size: .95rem; font-weight: 300; color: var(--ui-text-2); }
 .areas-more a { color: var(--ui-accent); text-decoration: none; border-bottom: 1px solid var(--ui-line); }
 .areas-more a:hover { color: var(--ui-text); }
+
+/* Footer opening hours line (plain text, sits under the email link) */
+.footer-list .footer-hours { padding: 5px 0; font-size: 0.74rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.4; color: var(--ash, #8a8a8a); }

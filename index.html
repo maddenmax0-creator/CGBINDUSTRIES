@@ -53,10 +53,20 @@
     "url": "https://cgbindustries.com.au/",
     "telephone": "+61414438169",
     "email": "cgbindustries@outlook.com.au",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "07:00",
+        "closes": "17:00"
+      }
+    ],
     "description": "CGB Industries specialises in professional concrete restoration, pressure washing, and sealing across the Sunshine Coast. Free quotes. Local and trusted.",
     "address": {
       "@type": "PostalAddress",
+      "addressLocality": "Buderim",
       "addressRegion": "QLD",
+      "postalCode": "4556",
       "addressCountry": "AU"
     },
     "areaServed": [
@@ -127,6 +137,14 @@
       {
         "@type": "City",
         "name": "Mons",
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Sunshine Coast, Queensland"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Noosa",
         "containedInPlace": {
           "@type": "AdministrativeArea",
           "name": "Sunshine Coast, Queensland"
@@ -1862,7 +1880,92 @@
     </div>
 
     <div class="rv-carousel reveal">
-      <div class="rv-track" id="rv-track" tabindex="0" role="region" aria-label="Google reviews. Swipe or scroll sideways to read more."></div>
+      <div class="rv-track" id="rv-track" tabindex="0" role="region" aria-label="Google reviews. Swipe or scroll sideways to read more.">
+        <article class="rv-card">
+          <div class="rv-head">
+            <div class="rv-avatar" aria-hidden="true">J</div>
+            <div>
+              <div class="rv-name">Jacinta M.</div>
+              <div class="rv-source">Google review</div>
+            </div>
+          </div>
+          <div class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="rv-text">“Wow! What a difference. Our 10 year old driveway was looking so stained and shabby. Chris came and worked his magic on it...and it looks brand new!!! Absolutely amazing! Thanks so much!!!”</p>
+          <button type="button" class="rv-more" aria-expanded="false" hidden>Read more</button>
+        </article>
+        <article class="rv-card">
+          <div class="rv-head">
+            <div class="rv-avatar" aria-hidden="true">C</div>
+            <div>
+              <div class="rv-name">Camilla S.</div>
+              <div class="rv-source">Google review</div>
+            </div>
+          </div>
+          <div class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="rv-text">“Chris pays great attention to detail and did an amazing job for us- high pressuring and sealing our front driveway. Great communication and always on time”</p>
+          <button type="button" class="rv-more" aria-expanded="false" hidden>Read more</button>
+        </article>
+        <article class="rv-card">
+          <div class="rv-head">
+            <div class="rv-avatar" aria-hidden="true">A</div>
+            <div>
+              <div class="rv-name">Average Joes</div>
+              <div class="rv-source">Google review</div>
+            </div>
+          </div>
+          <div class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="rv-text">“Chris came and did approx 300m2 of pressure cleaning at our place. Quality was beyond, price was fantastic. Highly recommend.”</p>
+          <button type="button" class="rv-more" aria-expanded="false" hidden>Read more</button>
+        </article>
+        <article class="rv-card">
+          <div class="rv-head">
+            <div class="rv-avatar" aria-hidden="true">T</div>
+            <div>
+              <div class="rv-name">Tim S.</div>
+              <div class="rv-source">Google review</div>
+            </div>
+          </div>
+          <div class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="rv-text">“Chris was on time and had all the gear required. Polite and very knowledgeable. Great work completed.”</p>
+          <button type="button" class="rv-more" aria-expanded="false" hidden>Read more</button>
+        </article>
+        <article class="rv-card">
+          <div class="rv-head">
+            <div class="rv-avatar" aria-hidden="true">T</div>
+            <div>
+              <div class="rv-name">Tim S.</div>
+              <div class="rv-source">Google review</div>
+            </div>
+          </div>
+          <div class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="rv-text">“Great job, great service, great people. Thank you. Driveway looks great!”</p>
+          <button type="button" class="rv-more" aria-expanded="false" hidden>Read more</button>
+        </article>
+        <article class="rv-card">
+          <div class="rv-head">
+            <div class="rv-avatar" aria-hidden="true">D</div>
+            <div>
+              <div class="rv-name">Damien S.</div>
+              <div class="rv-source">Google review</div>
+            </div>
+          </div>
+          <div class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="rv-text">“Professional work, friendly and great communication.”</p>
+          <button type="button" class="rv-more" aria-expanded="false" hidden>Read more</button>
+        </article>
+        <article class="rv-card">
+          <div class="rv-head">
+            <div class="rv-avatar" aria-hidden="true">A</div>
+            <div>
+              <div class="rv-name">Adam G.</div>
+              <div class="rv-source">Google review</div>
+            </div>
+          </div>
+          <div class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="rv-text">“Fantastic job, looks awesome.”</p>
+          <button type="button" class="rv-more" aria-expanded="false" hidden>Read more</button>
+        </article>
+      </div>
     </div>
 
     <div class="rv-actions reveal">
@@ -1920,6 +2023,15 @@
           <div>
             <div class="contact-label">Service Area</div>
             <span class="contact-val" style="cursor:default;">Sunshine Coast &amp; surrounds</span>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="#C8C3BC" stroke-width="1.2"/><path d="M8 4.5V8l2.5 1.5" stroke="#C8C3BC" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Hours</div>
+            <span class="contact-val" style="cursor:default;">Open 7 days, 7am–5pm</span>
           </div>
         </div>
       </div>
@@ -2024,6 +2136,7 @@
         <ul class="footer-list">
           <li><a href="tel:0414438169">0414 438 169</a></li>
           <li><a href="mailto:cgbindustries@outlook.com.au" class="footer-email">cgbindustries@outlook.com.au</a></li>
+          <li class="footer-hours">Open 7 days, 7am–5pm</li>
         </ul>
       </div>
     </div>
@@ -2035,16 +2148,8 @@
 </footer>
 
 <script>
-  // ══ REVIEWS: add new Google reviews here (one line each). The "Rated X" average updates itself. ══
-  const REVIEWS = [
-    { name: 'Jacinta M.', rating: 5, text: 'Wow! What a difference. Our 10 year old driveway was looking so stained and shabby. Chris came and worked his magic on it...and it looks brand new!!! Absolutely amazing! Thanks so much!!!' },
-    { name: 'Camilla S.', rating: 5, text: 'Chris pays great attention to detail and did an amazing job for us- high pressuring and sealing our front driveway. Great communication and always on time' },
-    { name: 'Average Joes', rating: 5, text: 'Chris came and did approx 300m2 of pressure cleaning at our place. Quality was beyond, price was fantastic. Highly recommend.' },
-    { name: 'Tim S.', rating: 5, text: 'Chris was on time and had all the gear required. Polite and very knowledgeable. Great work completed.' },
-    { name: 'Tim S.', rating: 5, text: 'Great job, great service, great people. Thank you. Driveway looks great!' },
-    { name: 'Damien S.', rating: 5, text: 'Professional work, friendly and great communication.' },
-    { name: 'Adam G.', rating: 5, text: 'Fantastic job, looks awesome.' }
-  ];
+  // ══ REVIEWS: the review cards and the "Rated 5.0 on Google" line are plain HTML in #testimonials (so crawlers can read them).
+  //    To add a review, copy an .rv-card inside #rv-track. The script below only wires "Read more" and the arrows. ══
 
   // ── CONTACT FORM ──
   const form = document.getElementById('contact-form');
@@ -2088,52 +2193,18 @@
 
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-  // ── GOOGLE REVIEWS (widget; the review list is at the top of this script) ──
+  // ── GOOGLE REVIEWS (carousel behaviour only; cards and rating are static HTML) ──
   (function () {
     const track = document.getElementById('rv-track');
     if (!track) return;
-    const avg = REVIEWS.reduce((t, r) => t + r.rating, 0) / REVIEWS.length;
-    document.getElementById('rv-rated').textContent = 'Rated ' + avg.toFixed(1) + ' on Google';
-
-    REVIEWS.forEach(r => {
-      const card = document.createElement('article');
-      card.className = 'rv-card';
-      const head = document.createElement('div');
-      head.className = 'rv-head';
-      const av = document.createElement('div');
-      av.className = 'rv-avatar';
-      av.setAttribute('aria-hidden', 'true');
-      av.textContent = r.name.charAt(0).toUpperCase();
-      const who = document.createElement('div');
-      const nm = document.createElement('div');
-      nm.className = 'rv-name';
-      nm.textContent = r.name;
-      const src = document.createElement('div');
-      src.className = 'rv-source';
-      src.textContent = 'Google review';
-      who.append(nm, src);
-      head.append(av, who);
-      const stars = document.createElement('div');
-      stars.className = 'rv-stars';
-      stars.setAttribute('role', 'img');
-      stars.setAttribute('aria-label', r.rating + ' out of 5 stars');
-      stars.textContent = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
-      const text = document.createElement('p');
-      text.className = 'rv-text';
-      text.textContent = '\u201C' + r.text + '\u201D';
-      const more = document.createElement('button');
-      more.type = 'button';
-      more.className = 'rv-more';
-      more.textContent = 'Read more';
-      more.hidden = true;
-      more.setAttribute('aria-expanded', 'false');
+    // Cards are static HTML; wire up each card's "Read more" toggle.
+    track.querySelectorAll('.rv-card').forEach(card => {
+      const more = card.querySelector('.rv-more');
       more.addEventListener('click', () => {
         const open = card.classList.toggle('expanded');
         more.textContent = open ? 'Read less' : 'Read more';
         more.setAttribute('aria-expanded', open);
       });
-      card.append(head, stars, text, more);
-      track.appendChild(card);
     });
 
     // Only show "Read more" on cards whose text is actually clamped.

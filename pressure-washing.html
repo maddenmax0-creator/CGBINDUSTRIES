@@ -11,12 +11,12 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pressure Washing Sunshine Coast | Driveways &amp; Paths | CGB</title>
-  <meta name="description" content="Rotary pressure washing for driveways, paths, pool surrounds and commercial concrete on the Sunshine Coast. No striping, no subcontractors. Free quotes." />
+  <title>Pressure Cleaning &amp; Pressure Washing Sunshine Coast | CGB</title>
+  <meta name="description" content="Pressure washing and pressure cleaning for Sunshine Coast driveways, paths, pool surrounds and commercial concrete. No subcontractors. Free quote." />
   <link rel="canonical" href="https://cgbindustries.com.au/pressure-washing" />
 
-  <meta property="og:title" content="Pressure Washing Sunshine Coast | Driveways &amp; Paths | CGB" />
-  <meta property="og:description" content="Rotary pressure washing for driveways, paths, pool surrounds and commercial concrete on the Sunshine Coast. No striping, no subcontractors. Free quotes." />
+  <meta property="og:title" content="Pressure Cleaning &amp; Pressure Washing Sunshine Coast | CGB" />
+  <meta property="og:description" content="Pressure washing and pressure cleaning for Sunshine Coast driveways, paths, pool surrounds and commercial concrete. No subcontractors. Free quote." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cgbindustries.com.au/pressure-washing" />
   <meta property="og:image" content="https://cgbindustries.com.au/img2/og-image-2.jpg">
@@ -26,8 +26,8 @@
   <meta property="og:site_name" content="CGB Industries" />
   <meta property="og:locale" content="en_AU" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Pressure Washing Sunshine Coast | Driveways &amp; Paths | CGB" />
-  <meta name="twitter:description" content="Rotary pressure washing for driveways, paths, pool surrounds and commercial concrete on the Sunshine Coast. No striping, no subcontractors. Free quotes." />
+  <meta name="twitter:title" content="Pressure Cleaning &amp; Pressure Washing Sunshine Coast | CGB" />
+  <meta name="twitter:description" content="Pressure washing and pressure cleaning for Sunshine Coast driveways, paths, pool surrounds and commercial concrete. No subcontractors. Free quote." />
   <meta name="twitter:image" content="https://cgbindustries.com.au/img2/og-image-2.jpg" />
   <meta name="twitter:image:alt" content="Before and after concrete cleaning and sealing in Buderim" />
   <link rel="icon" href="/favicon.ico" sizes="48x48" />
@@ -86,8 +86,8 @@
       },
       {
         "@type": "Question",
-        "name": "How long does a driveway take to clean?",
-        "acceptedAnswer": { "@type": "Answer", "text": "A standard residential driveway is usually a half-day job including edges and detail work. Larger areas or commercial surfaces are scoped and timed at quote stage." }
+        "name": "How long does pressure cleaning a driveway take?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A standard driveway usually takes half a day to a full day to pressure clean, and larger areas can take longer. If you're getting it sealed too, the sealer needs time to dry: light foot traffic after 24 hours, and vehicles after several days, depending on the sealer and weather. We'll give you a timeframe for your job when we quote." }
       }
     ]
   }
@@ -343,13 +343,47 @@
     }
     .body-text a:hover, .surface-list a:hover, .sealer-body a:hover { color: var(--white); border-color: var(--ash); }
 
+
+    /* ── HERO TRUST LINE ── */
+    .hero-trust { margin-top: 18px; max-width: 560px; font-size: 0.8rem; font-weight: 400; color: var(--ash); line-height: 1.6; letter-spacing: 0.02em; }
+
+    /* ── REVIEW CARD (same look as the homepage reviews) ── */
+    .rv-card { max-width: 640px; background: var(--card); border: 1px solid var(--border); padding: 30px 28px; display: flex; flex-direction: column; }
+    .rv-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .rv-avatar {
+      width: 40px; height: 40px; border-radius: 50%; background: var(--mid); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Oswald', sans-serif; font-size: 1rem; flex: none;
+    }
+    .rv-name { font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); }
+    .rv-source { font-size: 0.72rem; color: var(--ash); letter-spacing: 0.04em; margin-top: 2px; }
+    .rv-stars { color: var(--concrete); font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 14px; }
+    .rv-text { font-size: 0.92rem; color: var(--light); line-height: 1.75; font-weight: 300; }
+    .rv-actions { display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; margin-top: 28px; }
+    .rv-link-ghost {
+      display: inline-flex; align-items: center;
+      font-family: 'Oswald', sans-serif; font-size: 0.9rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--ash); text-decoration: none; padding: 14px 0; border-bottom: 1px solid var(--border);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .rv-link-ghost:hover { color: var(--white); border-color: var(--ash); }
+
     /* ── MOBILE ── */
     @media (max-width: 768px) {
 
       .page-hero { padding: 120px 24px 56px; }
+      .page-hero .h2 { font-size: 2.3rem; }
+      .page-hero .breadcrumb { margin-bottom: 18px; }
+      .page-hero .label { margin-bottom: 10px; }
+      .page-hero-body { margin-top: 14px; font-size: 0.9rem; }
+      .page-hero-actions { gap: 12px; margin-top: 24px; }
+      .hero-trust { margin-top: 14px; }
       .page-hero-actions { flex-direction: column; align-items: stretch; }
       .page-hero-actions .btn-primary { justify-content: center; }
       .page-hero-actions .btn-ghost { justify-content: center; border: 1px solid var(--border); padding: 14px 0; }
+      .rv-card { padding: 26px 22px; }
+      .rv-actions { flex-direction: column; align-items: stretch; }
+      .rv-link-ghost { justify-content: center; border: 1px solid var(--border); padding: 14px 0; }
 
       .content-section { padding: 64px 24px; }
       .content-columns { grid-template-columns: 1fr; gap: 32px; }
@@ -475,8 +509,8 @@
   <div class="page-hero-inner">
     <div class="breadcrumb"><a href="/">Home</a><span>/</span>Pressure Washing</div>
     <div class="label">Service</div>
-    <h1 class="h2">Pressure Washing</h1>
-    <p class="body-text page-hero-body">Rotary surface cleaning for driveways, paths, pool surrounds and commercial concrete across the Sunshine Coast. No zebra striping — because we don't clean with a wand.</p>
+    <h1 class="h2">Pressure Washing &amp; Pressure Cleaning on the Sunshine Coast</h1>
+    <p class="body-text page-hero-body">Rotary pressure cleaning for driveways, paths, pool surrounds and commercial concrete across the Sunshine Coast. No zebra striping — because we don't clean with a wand.</p>
     <div class="page-hero-actions">
       <a href="/#contact" class="btn-primary">
         Get a Free Quote
@@ -484,6 +518,7 @@
       </a>
       <a href="tel:0414438169" class="btn-ghost">Call 0414 438 169</a>
     </div>
+    <p class="hero-trust">Open 7 days, 7am–5pm · Free quotes, usually within 48 hours · Jobs usually started within a week of accepting your quote.</p>
   </div>
 </section>
 
@@ -501,7 +536,7 @@
       </div>
       <div class="reveal reveal-d1">
         <p class="body-text">Every surface gets assessed before we start. Sealed concrete, exposed aggregate, coloured concrete, and paving all respond differently to pressure — we set up for the surface in front of us, not a one-size job sheet.</p>
-        <p class="body-text">Oil stains, tyre marks, moss, algae, and general grime built up over years typically lift in a single visit.</p>
+        <p class="body-text">Moss, algae, tyre marks and general grime built up over years normally lift in a single clean. Old oil and rust stains may only lighten, not fully lift, and we'll tell you what to expect when we quote.</p>
       </div>
     </div>
   </div>
@@ -516,7 +551,7 @@
     </div>
     <div class="content-columns">
       <div class="reveal">
-        <p class="body-text">Anywhere concrete or paving takes a beating from weather, traffic, or moisture.</p>
+        <p class="body-text">Pressure cleaning suits anywhere concrete or paving takes a beating from weather, traffic, or moisture.</p>
         <ul class="surface-list">
           <li><a href="/driveway-cleaning">Driveways</a> &amp; carparks</li>
           <li><a href="/pool-surround-and-path-cleaning">Paths &amp; walkways</a></li>
@@ -590,6 +625,48 @@
   </div>
 </section>
 
+<!-- LOCAL & OWNER-OPERATED -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="content-header reveal">
+      <div class="label">Local &amp; Owner-Operated</div>
+      <h2 class="h3">Who Does the Work</h2>
+    </div>
+    <div class="content-columns">
+      <div class="reveal">
+        <p class="body-text">Based in Buderim, servicing the whole Sunshine Coast including Noosa.</p>
+      </div>
+      <div class="reveal reveal-d1">
+        <p class="body-text">CGB is owner-operated, with 20+ years in concreting. Chris quotes every job and does the work. No subcontractors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="content-section alt" aria-label="Customer review">
+  <div class="content-inner">
+    <div class="content-header reveal">
+      <div class="label">Reviews</div>
+      <h2 class="h3">What Customers Say</h2>
+    </div>
+    <article class="rv-card reveal">
+      <div class="rv-head">
+        <div class="rv-avatar" aria-hidden="true">C</div>
+        <div>
+          <div class="rv-name">Camilla S.</div>
+          <div class="rv-source">Google review</div>
+        </div>
+      </div>
+      <div class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+      <p class="rv-text">“Chris pays great attention to detail and did an amazing job for us- high pressuring and sealing our front driveway. Great communication and always on time”</p>
+    </article>
+    <div class="rv-actions reveal">
+      <a href="https://maps.google.com/?cid=16532661349836979989" class="rv-link-ghost" target="_blank" rel="noopener">See our reviews on Google</a>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="content-section">
   <div class="content-inner">
@@ -629,8 +706,8 @@
       <div class="faq-item reveal">
         <div class="faq-dash">—</div>
         <div>
-          <div class="faq-q">How long does a driveway take to clean?</div>
-          <p class="faq-a">A standard residential driveway is usually a half-day job including edges and detail work. Larger areas or commercial surfaces are scoped and timed at quote stage.</p>
+          <div class="faq-q">How long does pressure cleaning a driveway take?</div>
+          <p class="faq-a">A standard driveway usually takes half a day to a full day to pressure clean, and larger areas can take longer. If you're getting it sealed too, the sealer needs time to dry: light foot traffic after 24 hours, and vehicles after several days, depending on the sealer and weather. We'll give you a timeframe for your job when we quote.</p>
         </div>
       </div>
     </div>
@@ -699,6 +776,7 @@
         <ul class="footer-list">
           <li><a href="tel:0414438169">0414 438 169</a></li>
           <li><a href="mailto:cgbindustries@outlook.com.au" class="footer-email">cgbindustries@outlook.com.au</a></li>
+          <li class="footer-hours">Open 7 days, 7am–5pm</li>
         </ul>
       </div>
     </div>
